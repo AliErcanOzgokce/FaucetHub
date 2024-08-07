@@ -7,8 +7,123 @@
     "wss://ropsten.infura.io/ws/v3/${INFURA_API_KEY}"
   ],
   "faucets": [
-    "http://fauceth.komputing.org?chain=3&address=${ADDRESS}",
-    "https://faucet.ropsten.be?${ADDRESS}"
+    {
+      "url":"https://www.alchemy.com/faucets/ethereum-sepolia",
+      "amount": "0.1",
+      "limit": "1/day",
+      "socialLogin": false,
+      "captcha": true,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false
+    },
+    {
+      "url": "https://cloud.google.com/application/web3/faucet/ethereum/sepolia",
+      "amount": "0.05",
+      "limit": "1/day",
+      "socialLogin": false,
+      "captcha": true,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false
+    },
+    {
+      "url": "https://www.infura.io/faucet/sepolia",
+      "amount": "0-0.5",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false
+    },
+    {
+      "url": "https://getblock.io/faucet/eth-sepolia/",
+      "amount": "0.1",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false
+    },
+    {
+      "url": "https://faucet.quicknode.com/ethereum/sepolia",
+      "amount": "0.001",
+      "limit": "1/day",
+      "socialLogin": false,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false
+    },
+    {
+      "url": "https://tatum.io/faucets/sepolia",
+      "amount": "0.002",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false
+    },
+    {
+      "url": "https://access.rockx.com/faucet-sepolia",
+      "amount": "0.05",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": true,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false
+    },
+    {
+      "url": "https://sepolia-faucet.pk910.de/",
+      "amount": "-",
+      "limit": "-",
+      "socialLogin": false,
+      "captcha": true,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false
+    },
+    {
+      "url": "https://faucets.chain.link/sepolia",
+      "amount": "0.1",
+      "limit": "1/35Hours",
+      "socialLogin": false,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false
+    },
+    {
+      "url": "https://www.sepoliafaucet.io/",
+      "amount": "0.01",
+      "limit": "1/day",
+      "socialLogin": false,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false
+    },
+    {
+      "url": "https://faucet.chainstack.com/sepolia-testnet-faucet",
+      "amount": "0.5",
+      "limit": "1/day",
+      "socialLogin": true, 
+      "captcha": false,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false
+    },
+    {
+      "url": "https://learnweb3.io/faucets/sepolia/",
+      "amount": "0.02",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false
+    },
+    {
+      "url": "https://tokentool.bitbond.com/faucet/ethereum-sepolia",
+      "amount": "0.01",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false
+    }
   ],
   "nativeCurrency": {
     "name": "Ropsten Ether",
