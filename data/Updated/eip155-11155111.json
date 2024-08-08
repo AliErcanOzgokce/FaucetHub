@@ -34,7 +34,7 @@
       "url": "https://cloud.google.com/application/web3/faucet/ethereum/sepolia",
       "amount": "0.05",
       "limit": "1/day",
-      "socialLogin": false,
+      "socialLogin": true,
       "captcha": true,
       "mainnetTokenBalanceRequired": false,
       "isOfficial": false,
