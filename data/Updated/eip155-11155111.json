@@ -1,0 +1,187 @@
+{
+  "name": "Sepolia",
+  "title": "Ethereum Testnet Sepolia",
+  "chain": "ETH",
+  "rpc": [
+    "https://rpc.sepolia.org",
+    "https://rpc2.sepolia.org",
+    "https://rpc-sepolia.rockx.com",
+    "https://rpc.sepolia.ethpandaops.io",
+    "https://sepolia.infura.io/v3/${INFURA_API_KEY}",
+    "wss://sepolia.infura.io/v3/${INFURA_API_KEY}",
+    "https://sepolia.gateway.tenderly.co",
+    "wss://sepolia.gateway.tenderly.co",
+    "https://ethereum-sepolia-rpc.publicnode.com",
+    "wss://ethereum-sepolia-rpc.publicnode.com",
+    "https://sepolia.drpc.org",
+    "wss://sepolia.drpc.org",
+    "https://rpc-sepolia.rockx.com"
+  ],
+  "faucets": [
+    {
+      "name": "Alchemy",
+      "url": "https://www.alchemy.com/faucets/ethereum-sepolia",
+      "amount": "0.1",
+      "limit": "1/day",
+      "socialLogin": false,
+      "captcha": true,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Google Cloud Web3",
+      "url": "https://cloud.google.com/application/web3/faucet/ethereum/sepolia",
+      "amount": "0.05",
+      "limit": "1/day",
+      "socialLogin": false,
+      "captcha": true,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Infura",
+      "url": "https://www.infura.io/faucet/sepolia",
+      "amount": "0-0.5",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "GetBlock",
+      "url": "https://getblock.io/faucet/eth-sepolia/",
+      "amount": "0.1",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "QuickNode",
+      "url": "https://faucet.quicknode.com/ethereum/sepolia",
+      "amount": "0.001",
+      "limit": "1/day",
+      "socialLogin": false,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Tatum",
+      "url": "https://tatum.io/faucets/sepolia",
+      "amount": "0.002",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "RockX",
+      "url": "https://access.rockx.com/faucet-sepolia",
+      "amount": "0.05",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": true,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "PoWFaucet",
+      "url": "https://sepolia-faucet.pk910.de/",
+      "amount": "-",
+      "limit": "-",
+      "socialLogin": false,
+      "captcha": true,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false,
+      "isPOW": true
+    },
+    {
+      "name": "Chainlink",
+      "url": "https://faucets.chain.link/sepolia",
+      "amount": "0.1",
+      "limit": "1/35Hours",
+      "socialLogin": false,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Autamata",
+      "url": "https://www.sepoliafaucet.io/",
+      "amount": "0.01",
+      "limit": "1/day",
+      "socialLogin": false,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Chainstack",
+      "url": "https://faucet.chainstack.com/sepolia-testnet-faucet",
+      "amount": "0.5",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "LearnWeb3",
+      "url": "https://learnweb3.io/faucets/sepolia/",
+      "amount": "0.02",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Bitbond",
+      "url": "https://tokentool.bitbond.com/faucet/ethereum-sepolia",
+      "amount": "0.01",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false,
+      "isPOW": false
+    }
+  ],
+  "nativeCurrency": {
+    "name": "Sepolia Ether",
+    "symbol": "ETH",
+    "decimals": 18
+  },
+  "infoURL": "https://sepolia.otterscan.io",
+  "shortName": "sep",
+  "chainId": 11155111,
+  "networkId": 11155111,
+  "slip44": 1,
+  "explorers": [
+    {
+      "name": "etherscan-sepolia",
+      "url": "https://sepolia.etherscan.io",
+      "standard": "EIP3091"
+    },
+    {
+      "name": "otterscan-sepolia",
+      "url": "https://sepolia.otterscan.io",
+      "standard": "EIP3091"
+    }
+  ]
+}
