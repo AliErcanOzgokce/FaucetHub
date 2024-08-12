@@ -3,7 +3,30 @@
   "title": "Polygon zkEVM Cardona Testnet",
   "chain": "Polygon",
   "rpc": ["https://rpc.cardona.zkevm-rpc.com"],
-  "faucets": [],
+  "faucets": [
+    {
+      "name": "Polygon Faucet",
+      "url": "https://faucet.polygon.technology/",
+      "amount": "0.02",
+      "limit": "Every 5 min",
+      "socialLogin": true,
+      "captcha": true,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": true,
+      "isPOW": false
+    },
+    {
+      "name": "Chainlink",
+      "url": "https://faucets.chain.link/polygon-zkevm-cardona",
+      "amount": "0.1",
+      "limit": "1/35Hours",
+      "socialLogin": false,
+      "captcha": true,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false,
+      "isPOW":false
+    }
+  ],
   "nativeCurrency": {
     "name": "Ether",
     "symbol": "ETH",
