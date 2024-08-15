@@ -6,7 +6,129 @@
     "https://optimism-sepolia.drpc.org",
     "wss://optimism-sepolia.drpc.org"
   ],
-  "faucets": ["https://app.optimism.io/faucet"],
+  "faucets": [
+    {
+      "name": "Optimism Superchain Faucet",
+      "url": "https://console.optimism.io/faucet",
+      "amount": "0.05",
+      "limit": "1/day",
+      "socialLogin": false,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": true,
+      "isPOW": false
+    },
+    {
+      "name": "Alchemy Faucet",
+      "url": "https://www.alchemy.com/faucets/optimism-sepolia",
+      "amount": "0.1",
+      "limit": "1/day",
+      "socialLogin": false,
+      "captcha": true,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "QuickNode Faucet",
+      "url": "https://faucet.quicknode.com/optimism/sepolia",
+      "amount": "0.1",
+      "limit": "1/day",
+      "socialLogin": false,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Ethereum Optimism POW Faucet",
+      "url": "https://www.ethereum-ecosystem.com/faucets/optimism-sepolia",
+      "amount": "-",
+      "limit": "-",
+      "socialLogin": false,
+      "captcha": true,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false,
+      "isPOW": true
+    },
+    {
+      "name": "Getblock Faucet",
+      "url": "https://getblock.io/faucet/op-sepolia/",
+      "amount": "0.1",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Triangle Faucet",
+      "url": "https://faucet.triangleplatform.com/optimism/sepolia",
+      "amount": "0.001",
+      "limit": "1/day",
+      "socialLogin": false,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Bitbond",
+      "url": "https://tokentool.bitbond.com/faucet/polygon-amoy",
+      "amount": "0.1",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": true,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "LearnWeb3 Faucet",
+      "url": "https://learnweb3.io/faucets/optimism_sepolia/",
+      "amount": "0.01",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false,
+      "isPOW": false 
+    },
+    {
+      "name": "Blast Faucet",
+      "url": "https://blastapi.io/faucets/optimism-sepolia",
+      "amount": "0.025",
+      "limit": "1/day",
+      "socialLogin": false,
+      "captcha": true,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "L2Faucet",
+      "url": "https://www.l2faucet.com/optimism",
+      "amount": "0.01",
+      "limit": "1/day",
+      "socialLogin": false,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Bwarelabs Faucet",
+      "url": "https://bwarelabs.com/faucets/optimism-sepolia",
+      "amount": "0.025",
+      "limit": "1/day",
+      "socialLogin": false,
+      "captcha": true,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false,
+      "isPOW": false
+    }
+  ],
   "nativeCurrency": {
     "name": "Sepolia Ether",
     "symbol": "ETH",
