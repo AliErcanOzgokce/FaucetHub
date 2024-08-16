@@ -7,7 +7,52 @@
     "https://avalanche-fuji-c-chain-rpc.publicnode.com",
     "wss://avalanche-fuji-c-chain-rpc.publicnode.com"
   ],
-  "faucets": ["https://faucet.avax-test.network/"],
+  "faucets": [
+    {
+      "name": "Core Faucet",
+      "url": "https://core.app/tools/testnet-faucet/",
+      "amount": "2",
+      "limit": "1/day",
+      "socialLogin": false,
+      "captcha": true,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": true,
+      "isPOW": false
+    },
+    {
+      "name": "Chainlink",
+      "url": "https://faucets.chain.link/fuji",
+      "amount": "0.25",
+      "limit": "1/35hr",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Bitbond",
+      "url": "https://tokentool.bitbond.com/faucet/avalanche-fuji",
+      "amount": "0.1",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Quicknode",
+      "url": "https://faucet.quicknode.com/avalanche/fuji",
+      "amount": "0.1",
+      "limit": "2/day",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false,
+      "isPOW": false
+    }
+  ],
   "nativeCurrency": {
     "name": "Avalanche",
     "symbol": "AVAX",
