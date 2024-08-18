@@ -6,7 +6,107 @@
     "https://sepolia-rollup.arbitrum.io/rpc",
     "https://arbitrum-sepolia.infura.io/v3/${INFURA_API_KEY}"
   ],
-  "faucets": [],
+  "faucets": [
+    {
+      "name": "Alchemy",
+      "url": "https://www.alchemy.com/faucets/arbitrum-sepolia",
+      "amount": "0.1",
+      "limit": "1/day",
+      "socialLogin": false,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Quicknode",
+      "url": "https://faucet.quicknode.com/arbitrum/sepolia",
+      "amount": "0.1",
+      "limit": "2/day",
+      "socialLogin": false,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Chainlink",
+      "url": "https://faucets.chain.link/arbitrum-sepolia",
+      "amount": "0.1",
+      "limit": "1/35hr",
+      "socialLogin": false,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "GetBlock",
+      "url": "https://getblock.io/faucet/arb-sepolia/",
+      "amount": "0.1",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Bitbond",
+      "url": "https://tokentool.bitbond.com/faucet/arbitrum-sepolia",
+      "amount": "0.1",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "L2Faucet",
+      "url": "https://www.l2faucet.com/arbitrum",
+      "amount": "0.01",
+      "limit": "1/day",
+      "socialLogin": false,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "BwareLabs",
+      "url": "https://bwarelabs.com/faucets/arbitrum-sepolia",
+      "amount": "0.025",
+      "limit": "1/day",
+      "socialLogin": false,
+      "captcha": true,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "LearnWeb3",
+      "url": "https://learnweb3.io/faucets/polygon_amoy/",
+      "amount": "0.01",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Blast",
+      "url": "https://blastapi.io/faucets/arbitrum-sepolia",
+      "amount": "0.025",
+      "limit": "1/day",
+      "socialLogin": false,
+      "captcha": true,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false,
+      "isPOW": false
+    }
+  ],
   "nativeCurrency": {
     "name": "Sepolia Ether",
     "symbol": "ETH",
