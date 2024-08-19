@@ -11,7 +11,61 @@
     "https://bsc-testnet-rpc.publicnode.com",
     "wss://bsc-testnet-rpc.publicnode.com"
   ],
-  "faucets": ["https://testnet.bnbchain.org/faucet-smart"],
+  "faucets": [
+    {
+      "name": "BNB Faucet",
+      "url": "https://www.bnbchain.org/en/testnet-faucet",
+      "amount": "0.3",
+      "limit": "1/day",
+      "socialLogin": false,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": true,
+      "isPOW": false
+    },
+    {
+      "name": "Quicknode",
+      "url": "https://faucet.quicknode.com/binance-smart-chain/bnb-testnet",
+      "amount": "0.1",
+      "limit": "2/day",
+      "socialLogin": false,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Bitbond",
+      "url": "https://tokentool.bitbond.com/faucet/bsc-testnet",
+      "amount": "0.1",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Chainstack",
+      "url": "https://faucet.chainstack.com/bnb-testnet-faucet",
+      "amount": "0.5",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Triangle",
+      "url": "https://faucet.triangleplatform.com/bnbsmartchain/testnet",
+      "amount": "0.001",
+      "socialLogin": false,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false,
+      "isPOW": false
+    }
+  ],
   "nativeCurrency": {
     "name": "BNB Chain Native Token",
     "symbol": "tBNB",
