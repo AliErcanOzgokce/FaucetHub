@@ -6,7 +6,150 @@
     "https://base-sepolia-rpc.publicnode.com",
     "wss://base-sepolia-rpc.publicnode.com"
   ],
-  "faucets": [],
+  "faucets": [
+    {
+      "name": "Chainlink",
+      "url": "https://faucets.chain.link/base-sepolia",
+      "amount": "0.1",
+      "limit": "1/35hr",
+      "socialLogin": false,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false, 
+      "isPOW": false
+    },
+    {
+      "name": "Alchemy",
+      "url": "https://www.alchemy.com/faucets/base-sepolia",
+      "amount": "0.1",
+      "limit": "1/day",
+      "socialLogin": false,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Superchain Faucet",
+      "url": "https://console.optimism.io/faucet",
+      "amount": "0.05",
+      "limit": "1/day",
+      "socialLogin": false,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Coinbase",
+      "url": "https://portal.cdp.coinbase.com/products/faucet",
+      "amount": "0.5",
+      "limit": "1/week",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Bware Labs",
+      "url": "https://bwarelabs.com/faucets/base-sepolia",
+      "amount": "0.025",
+      "limit": "1/day",
+      "socialLogin": false,
+      "captcha": true,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Quicknode",
+      "url": "https://faucet.quicknode.com/base/sepolia",
+      "amount": "0.1",
+      "limit": "2/day",
+      "socialLogin": false,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "LearnWeb3",
+      "url": "https://learnweb3.io/faucets/base_sepolia/",
+      "amount": "0.01",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Ethereum Base POW Faucet",
+      "url": "https://www.ethereum-ecosystem.com/faucets/base-sepolia",
+      "amount": "-",
+      "limit": "-",
+      "socialLogin": false,
+      "captcha": true,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false,
+      "isPOW": true
+    },
+    {
+      "name": "GetBlock",
+      "url": "https://getblock.io/faucet/base-sepolia/",
+      "amount": "0.1",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Bitbond",
+      "url": "https://tokentool.bitbond.com/faucet/base-sepolia",
+      "amount": "0.1",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Blast",
+      "url": "https://blastapi.io/faucets/base-sepolia",
+      "amount": "0.025",
+      "limit": "1/day",
+      "socialLogin": false,
+      "captcha": true,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Triangle",
+      "url": "https://faucet.triangleplatform.com/base/sepolia",
+      "amount": "0.001",
+      "socialLogin": false,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "L2Faucet",
+      "url": "https://www.l2faucet.com/base",
+      "amount": "0.01",
+      "limit": "1/day",
+      "socialLogin": false,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false,
+      "isPOW": false
+    }
+  ],
   "nativeCurrency": {
     "name": "Sepolia Ether",
     "symbol": "ETH",
