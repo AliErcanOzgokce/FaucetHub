@@ -8,7 +8,52 @@
     "https://linea-sepolia.infura.io/v3/${INFURA_API_KEY}",
     "wss://linea-sepolia.infura.io/ws/v3/${INFURA_API_KEY}"
   ],
-  "faucets": [],
+  "faucets": [
+    {
+      "name": "Infura",
+      "url": "https://www.infura.io/faucet/linea",
+      "amount": "0.5",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Chainlink",
+      "url": "https://faucets.chain.link/linea-sepolia",
+      "amount": "0.1",
+      "limit": "1/35hr",
+      "socialLogin": false,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false, 
+      "isPOW": false
+    },
+    {
+      "name": "GetBlock",
+      "url": "https://getblock.io/faucet/linea-sepolia/",
+      "amount": "0.1",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Hackquest",
+      "url": "https://www.hackquest.io/en/faucets/59141",
+      "amount": "0.0015",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false,
+      "isPOW": false
+    }
+  ],
   "nativeCurrency": {
     "name": "Linea Ether",
     "symbol": "ETH",
