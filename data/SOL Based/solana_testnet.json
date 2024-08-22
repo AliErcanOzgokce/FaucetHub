@@ -1,8 +1,8 @@
 {
-  "name": "Bitcoin Testnet 3",
-  "title": "Bitcoin Testnet 3",
-  "chain": "Bitcoin",
-  "rpc": ["https://bitcoin-testnet.gateway.tatum.io"],
+  "name": "Solana Testnet",
+  "title": "Solana Testnet",
+  "chain": "Solana",
+  "rpc": [],
   "faucets": [
     {
       "name": "Quicknode",
@@ -15,7 +15,39 @@
       "isOfficial": false,
       "isPOW": false
     },
-    
+    {
+        "name": "SolFate",
+        "url": "https://solfate.com/faucet",
+        "amount": "1",
+        "limit": "1/day",
+        "socialLogin": false,
+        "captcha": false,
+        "mainnetTokenBalanceRequired": false,
+        "isOfficial": false,
+        "isPOW": false
+    },
+    {
+        "name": "Triangle",
+        "url": "https://faucet.triangleplatform.com/solana/testnet",
+        "amount": "1",
+        "limit": "1/day",
+        "socialLogin": false,
+        "captcha": false,
+        "mainnetTokenBalanceRequired": false,
+        "isOfficial": false,
+        "isPOW": false
+    },
+    {
+        "name": "DUMMY TOKEN FAUCET",
+        "url": "https://spl-token-faucet.com/",
+        "amount": "1",
+        "limit": "1/day",
+        "socialLogin": false,
+        "captcha": false,
+        "mainnetTokenBalanceRequired": false,
+        "isOfficial": false,
+        "isPOW": false
+    }
   ],
   "nativeCurrency": {
     "name": "Solana",
