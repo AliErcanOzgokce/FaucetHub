@@ -1,0 +1,68 @@
+{
+  "name": "Solana Devnet",
+  "title": "Solana Devnet",
+  "chain": "Solana",
+  "rpc": [],
+  "faucets": [
+    {
+      "name": "Quicknode",
+      "url": "https://faucet.quicknode.com/solana/devnet",
+      "amount": "0.1",
+      "limit": "2/day",
+      "socialLogin": false,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+        "name": "SolFate",
+        "url": "https://solfate.com/faucet",
+        "amount": "1",
+        "limit": "1/day",
+        "socialLogin": false,
+        "captcha": false,
+        "mainnetTokenBalanceRequired": false,
+        "isOfficial": false,
+        "isPOW": false
+    },
+    {
+        "name": "Triangle",
+        "url": "https://faucet.triangleplatform.com/solana/devnet",
+        "amount": "1",
+        "limit": "1/day",
+        "socialLogin": false,
+        "captcha": false,
+        "mainnetTokenBalanceRequired": false,
+        "isOfficial": false,
+        "isPOW": false
+    },
+    {
+        "name": "DUMMY TOKEN FAUCET",
+        "url": "https://spl-token-faucet.com/",
+        "amount": "1",
+        "limit": "1/day",
+        "socialLogin": false,
+        "captcha": false,
+        "mainnetTokenBalanceRequired": false,
+        "isOfficial": false,
+        "isPOW": false
+    }
+  ],
+  "nativeCurrency": {
+    "name": "Solana",
+    "symbol": "SOL",
+    "decimals": 9
+  },
+  "infoURL": "https://solana.com/",
+  "shortName": "solana-devnet",
+  "chainId": 901,
+  "networkId": 901,
+  "icon": "sol_devnet",
+  "explorers": [],
+  "parent": {
+    "type": "L1",
+    "chain": "",
+    "bridges": []
+  }
+}
