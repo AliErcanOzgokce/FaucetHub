@@ -8,7 +8,107 @@
     "https://scroll-sepolia.chainstacklabs.com",
     "https://scroll-testnet-public.unifra.io"
   ],
-  "faucets": [],
+  "faucets": [
+    {
+      "name": "ThirdWeb",
+      "url": "https://thirdweb.com/scroll-sepolia-testnet",
+      "amount": "0.01",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Hackquest",
+      "url": "https://www.hackquest.io/en/faucets/534351",
+      "amount": "0.0015",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Scroll Scroll Faucet",
+      "url": "https://scroll.l2scan.co/faucet",
+      "amount": "0.001",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": true,
+      "isPOW": false
+    },
+    {
+      "name": "Quicknode",
+      "url": "https://faucet.quicknode.com/base/sepolia",
+      "amount": "0.1",
+      "limit": "2/day",
+      "socialLogin": false,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Bware Labs",
+      "url": "https://bwarelabs.com/faucets/scroll-testnet",
+      "amount": "0.025",
+      "limit": "1/day",
+      "socialLogin": false,
+      "captcha": true,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Faucetme",
+      "url": "https://scroll.faucetme.pro/",
+      "amount": "0.001",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "L2Faucet",
+      "url": "https://www.l2faucet.com/scroll",
+      "amount": "0.01",
+      "limit": "1/day",
+      "socialLogin": false,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Triangle",
+      "url": "https://faucet.triangleplatform.com/scroll/sepolia",
+      "amount": "0.001",
+      "limit": "1/day",
+      "socialLogin": false,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Chainstack",
+      "url": "https://faucet.chainstack.com/scroll-sepolia-testnet-faucet",
+      "amount": "0.05",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false,
+      "isPOW": false
+    }
+  ],
   "nativeCurrency": {
     "name": "Ether",
     "symbol": "ETH",
