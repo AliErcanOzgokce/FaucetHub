@@ -15,8 +15,28 @@
     "wss://alfajores-forno.celo-testnet.org/ws"
   ],
   "faucets": [
-    "https://celo.org/developers/faucet",
-    "https://cauldron.pretoriaresearchlab.io/alfajores-faucet"
+    {
+      "name": "Alfajores Token Faucet",
+      "url": "https://faucet.celo.org/alfajores",
+      "amount": "0.1",
+      "limit": "1/day",
+      "socialLogin": false,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": true,
+      "isPOW": false
+    },
+    {
+      "name": "LearnWeb3",
+      "url": "https://learnweb3.io/faucets/base_sepolia/",
+      "amount": "0.05",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false,
+      "isPOW": false
+    }
   ],
   "infoURL": "https://docs.celo.org/",
   "explorers": [
