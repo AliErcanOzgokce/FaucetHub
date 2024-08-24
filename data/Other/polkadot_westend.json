@@ -1,0 +1,49 @@
+{
+    "name": "Polkadot Westend",
+    "title": "Polkadot Westend",
+    "chain": "Westend",
+    "rpc": [],
+    "faucets": [
+     {
+        "name": "Westend Faucet",
+        "url": "https://faucet.polkadot.io/westend",
+        "amount": "10",
+        "limit": "1/day",
+        "socialLogin": false,
+        "captcha": true,
+        "mainnetTokenBalanceRequired": false,
+        "isOfficial": true,
+        "isPOW": false
+     },
+     {
+        "name": "Triangle",
+        "url": "https://faucet.triangleplatform.com/polkadot/westend",
+        "amount": "0.01",
+        "limit": "1/day",
+        "socialLogin": false,
+        "captcha": false,
+        "mainnetTokenBalanceRequired": false,
+        "isOfficial": false,
+        "isPOW": false
+     } 
+    ],
+    "nativeCurrency": {
+      "name": "Westend",
+      "symbol": "WND",
+      "decimals": 18
+    },
+    "infoURL": "https://polkadot.com/",
+    "shortName": "polkadot-westend",
+    "chainId": "",
+    "networkId": "",
+    "icon": "polkadot_westend",
+    "explorers": [
+      
+    ],
+    "parent": {
+      "type": "L1",
+      "chain": "",
+      "bridges": []
+    }
+  }
+  
