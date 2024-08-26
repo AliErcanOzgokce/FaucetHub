@@ -6,7 +6,74 @@
     "https://blast-sepolia.drpc.org",
     "wss://blast-sepolia.drpc.org"
   ],
-  "faucets": ["https://faucet.quicknode.com/blast/sepolia"],
+  "faucets": [
+    {
+      "name": "Quicknode",
+      "url": "https://faucet.quicknode.com/blast/sepolia",
+      "amount": "0.1",
+      "limit": "2/day",
+      "socialLogin": false,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Blast API",
+      "url": "https://blastapi.io/faucets/blastl2-testnet",
+      "amount": "0.025",
+      "limit": "1/day",
+      "socialLogin": false,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Bitbond",
+      "url": "https://tokentool.bitbond.com/faucet/blast-sepolia",
+      "amount": "0.1",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Faucet Trade",
+      "url": "https://faucet.trade/blast-sepolia-eth-faucet",
+      "amount": "0.01",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": true,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "GetBlock",
+      "url": "https://getblock.io/faucet/blast-sepolia/",
+      "amount": "0.1",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false,
+      "isPOW": false
+    },
+    {
+      "name": "Chainlink",
+      "url": "https://faucets.chain.link/blast-sepolia",
+      "amount": "0.1",
+      "limit": "1/35hr",
+      "socialLogin": false,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": false,
+      "isPOW": false
+    }
+  ],
   "nativeCurrency": {
     "name": "Sepolia Ether",
     "symbol": "ETH",
