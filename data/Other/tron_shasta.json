@@ -1,0 +1,49 @@
+{
+    "name": "TRON Shasta Testnet",
+    "title": "TRON Shasta Testnet",
+    "chain": "Nile",
+    "rpc": [],
+    "faucets": [
+     {
+        "name": "Triangle",
+        "url": "https://faucet.triangleplatform.com/tron/shasta",
+        "amount": "1",
+        "limit": "1/day",
+        "socialLogin": false,
+        "captcha": false,
+        "mainnetTokenBalanceRequired": false,
+        "isOfficial": false,
+        "isPOW": false
+     },
+     {
+        "name": "Shasta Testnet Faucet",
+        "url": "https://shasta.tronex.io/",
+        "amount": "2000",
+        "limit": "1/day",
+        "socialLogin": false,
+        "captcha": true,
+        "mainnetTokenBalanceRequired": false,
+        "isOfficial": true,
+        "isPOW": false
+     }
+    ],
+    "nativeCurrency": {
+      "name": "TRX",
+      "symbol": "TRX",
+      "decimals": 18
+    },
+    "infoURL": "https://tron.network/",
+    "shortName": "tron-shasta",
+    "chainId": "",
+    "networkId": "",
+    "icon": "shasta",
+    "explorers": [
+      
+    ],
+    "parent": {
+      "type": "L1",
+      "chain": "",
+      "bridges": []
+    }
+  }
+  
