@@ -5,9 +5,20 @@
     "rpc": [],
     "faucets": [
      {
-        "name": "Westend Faucet",
-        "url": "https://faucet.polkadot.io/westend",
-        "amount": "10",
+        "name": "Triangle",
+        "url": "https://faucet.triangleplatform.com/tron/nile",
+        "amount": "1",
+        "limit": "1/day",
+        "socialLogin": false,
+        "captcha": false,
+        "mainnetTokenBalanceRequired": false,
+        "isOfficial": false,
+        "isPOW": false
+     },
+     {
+        "name": "Nile Testnet Faucet",
+        "url": "https://nileex.io/join/getJoinPage",
+        "amount": "2000",
         "limit": "1/day",
         "socialLogin": false,
         "captcha": true,
