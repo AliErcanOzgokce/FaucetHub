@@ -1,0 +1,38 @@
+{
+    "name": "TRON Nile Testnet",
+    "title": "TRON Nile Testnet",
+    "chain": "Nile",
+    "rpc": [],
+    "faucets": [
+     {
+        "name": "Westend Faucet",
+        "url": "https://faucet.polkadot.io/westend",
+        "amount": "10",
+        "limit": "1/day",
+        "socialLogin": false,
+        "captcha": true,
+        "mainnetTokenBalanceRequired": false,
+        "isOfficial": true,
+        "isPOW": false
+     }
+    ],
+    "nativeCurrency": {
+      "name": "TRX",
+      "symbol": "TRX",
+      "decimals": 18
+    },
+    "infoURL": "https://tron.network/",
+    "shortName": "tron-nile",
+    "chainId": "",
+    "networkId": "",
+    "icon": "tron_nile",
+    "explorers": [
+      
+    ],
+    "parent": {
+      "type": "L1",
+      "chain": "",
+      "bridges": []
+    }
+  }
+  
