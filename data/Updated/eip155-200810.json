@@ -8,7 +8,19 @@
     "wss://testnet-ws.bitlayer-rpc.com",
     "https://rpc.ankr.com/bitlayer_testnet"
   ],
-  "faucets": ["https://www.bitlayer.org/faucet"],
+  "faucets": [
+    {
+      "name": "Bitlayer Offical Faucet",
+      "url": "https://www.bitlayer.org/faucet",
+      "amount": "0.01",
+      "limit": "1/day",
+      "socialLogin": false,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": true,
+      "isPOW": false
+    }
+  ],
   "nativeCurrency": {
     "name": "BTC",
     "symbol": "BTC",
