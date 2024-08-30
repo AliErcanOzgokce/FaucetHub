@@ -5,8 +5,19 @@
     "rpc": [],
     "faucets": [
      {
+        "name": "Near Testnet Faucet",
+        "url": "https://near-faucet.io/",
+        "amount": "10",
+        "limit": "1/day",
+        "socialLogin": false,
+        "captcha": false,
+        "mainnetTokenBalanceRequired": false,
+        "isOfficial": true,
+        "isPOW": false
+     },
+     {
         "name": "Triangle",
-        "url": "https://faucet.triangleplatform.com/tron/shasta",
+        "url": "https://faucet.triangleplatform.com/near/testnet",
         "amount": "1",
         "limit": "1/day",
         "socialLogin": false,
