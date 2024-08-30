@@ -1,0 +1,49 @@
+{
+    "name": "Aptos Testnet",
+    "title": "Aptos Testnet",
+    "chain": "Aptos",
+    "rpc": [],
+    "faucets": [
+     {
+        "name": "Aptos Faucet",
+        "url": "https://www.aptosfaucet.com/",
+        "amount": "10",
+        "limit": "1/day",
+        "socialLogin": false,
+        "captcha": false,
+        "mainnetTokenBalanceRequired": false,
+        "isOfficial": false,
+        "isPOW": false
+     },
+     {
+        "name": "Triangle",
+        "url": "https://faucet.triangleplatform.com/near/testnet",
+        "amount": "1",
+        "limit": "1/day",
+        "socialLogin": false,
+        "captcha": false,
+        "mainnetTokenBalanceRequired": false,
+        "isOfficial": false,
+        "isPOW": false
+     }
+    ],
+    "nativeCurrency": {
+      "name": "APTOS",
+      "symbol": "APT",
+      "decimals": 8
+    },
+    "infoURL": "https://aptoslabs.com/",
+    "shortName": "aptos-testnet",
+    "chainId": "",
+    "networkId": "",
+    "icon": "aptos",
+    "explorers": [
+      
+    ],
+    "parent": {
+      "type": "L1",
+      "chain": "",
+      "bridges": []
+    }
+  }
+  
