@@ -1,0 +1,38 @@
+{
+    "name": "Near Testnet",
+    "title": "Near Testnet",
+    "chain": "Near",
+    "rpc": [],
+    "faucets": [
+     {
+        "name": "Triangle",
+        "url": "https://faucet.triangleplatform.com/tron/shasta",
+        "amount": "1",
+        "limit": "1/day",
+        "socialLogin": false,
+        "captcha": false,
+        "mainnetTokenBalanceRequired": false,
+        "isOfficial": false,
+        "isPOW": false
+     }
+    ],
+    "nativeCurrency": {
+      "name": "NEAR",
+      "symbol": "NEAR",
+      "decimals": 18
+    },
+    "infoURL": "https://near.org/",
+    "shortName": "near-testnet",
+    "chainId": "",
+    "networkId": "",
+    "icon": "near",
+    "explorers": [
+      
+    ],
+    "parent": {
+      "type": "L1",
+      "chain": "",
+      "bridges": []
+    }
+  }
+  
