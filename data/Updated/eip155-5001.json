@@ -5,8 +5,25 @@
   "faucets": [
     {
       "name":"Mantle Testnet Faucet",
-      "url":"https://faucet.testnet.mantle.xyz"
-      
+      "url":"https://faucet.testnet.mantle.xyz",
+      "amount": "1",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": false,
+      "isOfficial": true,
+      "isPOW": false
+    },
+    {
+      "name": "QuickNode Mantle Testnet Faucet",
+      "url": "https://faucet.quicknode.com/mantle-testnet",
+      "amount": "0.1",
+      "limit": "1/day",
+      "socialLogin": true,
+      "captcha": false,
+      "mainnetTokenBalanceRequired": true,
+      "isOfficial": false,
+      "isPOW": false
     }
   ],
   "nativeCurrency": {
