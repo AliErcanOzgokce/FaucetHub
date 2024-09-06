@@ -1,0 +1,74 @@
+{
+  "name": "Bitcoin Signet",
+  "title": "Bitcoin Signet",
+  "chain": "Bitcoin",
+  "rpc": ["https://bitcoin-testnet.gateway.tatum.io"],
+  "faucets": [
+    {
+        "name": "Coin Faucet",
+        "url": "https://coinfaucet.eu/en/btc-testnet/",
+        "amount": "0.00018",
+        "limit": "2/day",
+        "socialLogin": false,
+        "captcha": true,
+        "mainnetTokenBalanceRequired": false,
+        "isOfficial": false,
+        "isPOW": false
+    },
+    {
+        "name": "Bitcoin Testnet Faucet",
+        "url": "https://bitcoinfaucet.uo1.net/",
+        "amount": "0.00001",
+        "limit": "1/day",
+        "socialLogin": false,
+        "captcha": true,
+        "mainnetTokenBalanceRequired": false,
+        "isOfficial": false,
+        "isPOW": false
+    },
+    {
+        "name": "Crypto Pump",
+        "url": "https://cryptopump.info/",
+        "amount": "0.00001",
+        "limit": "1/day",
+        "socialLogin": false,
+        "captcha": true,
+        "mainnetTokenBalanceRequired": false,
+        "isOfficial": false,
+        "isPOW": false
+    },
+    {
+        "name": "Testnet Help",
+        "url": "https://testnet.help/en/btcfaucet/testnet",
+        "amount": "0.0001",
+        "limit": "1/day",
+        "socialLogin": false,
+        "captcha": true,
+        "mainnetTokenBalanceRequired": false,
+        "isOfficial": false,
+        "isPOW": false
+    }
+  ],
+  "nativeCurrency": {
+    "name": "Bitcoin",
+    "symbol": "sBTC",
+    "decimals": 18
+  },
+  "infoURL": "https://bitcoin.org/",
+  "shortName": "bitcoin-signet",
+  "chainId": 2442,
+  "networkId": 2442,
+  "icon": "btc_testnet",
+  "explorers": [
+    {
+      "name": "mempool",
+      "url": "https://mempool.space/signet",
+      "standard": ""
+    }
+  ],
+  "parent": {
+    "type": "L1",
+    "chain": "",
+    "bridges": []
+  }
+}
