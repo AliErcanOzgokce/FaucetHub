@@ -1,26 +1,26 @@
 {
-    "name": "Ton Testnet",
+    "name": "Ton Square Testnet",
     "title": "Ton Testnet",
     "chain": "Ton",
     "rpc": [],
     "faucets": [
      {
-        "name": "Aptos Faucet",
-        "url": "https://www.aptosfaucet.com/",
-        "amount": "10",
+        "name": "TON Square Faucet",
+        "url": "https://app.tonsquare.io/en/faucet",
+        "amount": "0.5",
         "limit": "1/day",
-        "socialLogin": false,
-        "captcha": false,
+        "socialLogin": true,
+        "captcha": true,
         "mainnetTokenBalanceRequired": false,
-        "isOfficial": false,
+        "isOfficial": true,
         "isPOW": false
      },
      {
-        "name": "Triangle",
-        "url": "https://faucet.triangleplatform.com/near/testnet",
+        "name": "Tonx API Faucet",
+        "url": "https://faucet.tonxapi.com/",
         "amount": "1",
-        "limit": "1/day",
-        "socialLogin": false,
+        "limit": "2/day",
+        "socialLogin": true,
         "captcha": false,
         "mainnetTokenBalanceRequired": false,
         "isOfficial": false,
@@ -28,14 +28,14 @@
      }
     ],
     "nativeCurrency": {
-      "name": "TON",
-      "symbol": "TON",
+      "name": "TOS",
+      "symbol": "TOS",
       "decimals": 18
     },
     "infoURL": "https://aptoslabs.com/",
     "shortName": "ton-testnet",
-    "chainId": "",
-    "networkId": "",
+    "chainId": "4024",
+    "networkId": "4024",
     "icon": "ton",
     "explorers": [
       
