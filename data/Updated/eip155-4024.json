@@ -32,13 +32,13 @@
       "symbol": "TOS",
       "decimals": 18
     },
-    "infoURL": "https://aptoslabs.com/",
+    "infoURL": "https://app.tonsquare.io/en/access-key",
     "shortName": "ton-testnet",
     "chainId": "4024",
     "networkId": "4024",
     "icon": "ton",
     "explorers": [
-      
+      "https://testnet.tonscan.org/"
     ],
     "parent": {
       "type": "L1",
