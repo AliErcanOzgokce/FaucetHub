@@ -15,14 +15,34 @@ const config: Config = {
       },
     },
   },
-  plugins: [
-    require('daisyui'),
-  ],
+  plugins: [require("daisyui")],
 
   daisyui: {
-    themes: false, // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
+    themes: [
+      {
+        mytheme: {
+          primary: "#7ab7f9",
+
+          secondary: "#f5a418",
+
+          accent: "#00ffff",
+
+          neutral: "#ff00ff",
+
+          "base-100": "#1c1917",
+
+          info: "#0000ff",
+
+          success: "#00ff00",
+
+          warning: "#00ff00",
+
+          error: "#ff0000",
+        },
+      },
+    ], // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
     darkTheme: "dark", // name of one of the included themes for dark mode
-    base: false, // applies background color and foreground color for root element 
+    base: false, // applies background color and foreground color for root element
   },
 };
 export default config;
