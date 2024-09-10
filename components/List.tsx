@@ -1,63 +1,61 @@
 import React from "react";
+import Image from "next/image";
+import btc from "@/assets/btc-testnet.png"
+import ethereum from "@/assets/ethereum.png"
+import arrow from "@/assets/arrow-right.png"
 
 function List() {
   return (
-    <div>
-      <div className="overflow-x-full">
-        <table className="table w-full">
+    <div className="w-full p-10  rounded-2xl">
+      <div className="overflow-x-auto">
+        <table className="table table-lg ">
           {/* head */}
           <thead className="text-black">
-            <tr>
-              <th>Name</th>
-              <th>Available Faucet</th>
+            <tr className="border-0">
+              <th></th>
+              <th></th>
               <th></th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="w-full">
             {/* row 1 */}
-            <tr>
+            <tr className="border-0">
               <td>
                 <div className="flex items-center gap-3">
                   <div className="avatar">
                     <div className="mask mask-squircle h-12 w-12">
-                      <img
-                        src="https://img.daisyui.com/images/profile/demo/2@94.webp"
-                        alt="Avatar Tailwind CSS Component"
-                      />
+                      <Image src={btc} width={30} height={30} alt="btc-testnet" />
                     </div>
                   </div>
                   <div>
-                    <div className="font-bold">Hart Hagerty</div>
-                    <div className="text-sm opacity-50">United States</div>
+                    <div className="font-bold">Bitcoin Testnet3</div>
                   </div>
                 </div>
               </td>
-              <td>12</td>
+              <td className="text-center">12 Faucets</td>
               <th>
-                <button className="btn btn-secondary text-white">details</button>
+                <button className="btn btn-secondary text-white">
+                  Go to Faucets
+                </button>
               </th>
             </tr>
             {/* row 2 */}
-            <tr>
+            <tr className="border-0">
               <td>
                 <div className="flex items-center gap-3">
                   <div className="avatar">
                     <div className="mask mask-squircle h-12 w-12">
-                      <img
-                        src="https://img.daisyui.com/images/profile/demo/3@94.webp"
-                        alt="Avatar Tailwind CSS Component"
-                      />
+                    <Image src={ethereum} width={30} height={30} alt="ethereum-sepolia" />
                     </div>
                   </div>
                   <div>
-                    <div className="font-bold">Brice Swyre</div>
-                    <div className="text-sm opacity-50">China</div>
+                    <div className="font-bold">Ethereum Sepolia</div>
                   </div>
                 </div>
               </td>
-              <td>4</td>
+              <td className="text-center">4</td>
               <th>
-                <button className="btn btn-secondary text-white">details</button>
+                <button className="btn btn-secondary text-white">Go to Faucets</button>
               </th>
             </tr>
             
