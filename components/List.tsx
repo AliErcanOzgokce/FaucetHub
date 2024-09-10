@@ -33,7 +33,7 @@ function List() {
                 </div>
               </td>
               <td className="text-center">12 Faucets</td>
-              <th>
+              <th className="flex justify-end">
                 <button className="btn btn-secondary text-white">
                   Go to Faucets
                 </button>
@@ -53,8 +53,8 @@ function List() {
                   </div>
                 </div>
               </td>
-              <td className="text-center">4</td>
-              <th>
+              <td className="text-center">4 Faucets</td>
+              <th className="flex justify-end">
                 <button className="btn btn-secondary text-white">Go to Faucets</button>
               </th>
             </tr>
