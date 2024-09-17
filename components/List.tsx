@@ -1,64 +1,41 @@
 import React from "react";
 import Image from "next/image";
-import btc from "@/assets/btc-testnet.png"
-import ethereum from "@/assets/ethereum.png"
-import arrow from "@/assets/arrow-right.png"
+import arrow from "@/assets/arrow-right.png";
+import mantleTestnet from "@/data/Updated/eip155-5001.json"; // Adjust the path as necessary
 
 function List() {
+  const networks = [mantleTestnet]; // Add more networks as needed
+
   return (
-    <div className="w-full p-10  rounded-2xl">
+    <div className="w-full p-10 rounded-2xl">
       <div className="overflow-x-auto">
-        <table className="table table-lg ">
+        <table className="table table-lg" style={{ width: "100%" }}>
           {/* head */}
           <thead className="text-black">
             <tr className="border-0">
-              <th></th>
-              <th></th>
+              <th>Name</th>
+              <th>Available Faucet</th>
               <th></th>
             </tr>
           </thead>
           <tbody className="w-full">
-            {/* row 1 */}
-            <tr className="border-0">
-              <td>
-                <div className="flex items-center gap-3">
-                  <div className="avatar">
-                    <div className="mask mask-squircle h-12 w-12">
-                      <Image src={btc} width={30} height={30} alt="btc-testnet" />
-                    </div>
-                  </div>
-                  <div>
-                    <div className="font-bold">Bitcoin Testnet3</div>
-                  </div>
-                </div>
-              </td>
-              <td className="text-center">12 Faucets</td>
-              <th className="flex justify-end">
-                <button className="btn btn-secondary text-white">
-                  Go to Faucets
-                </button>
-              </th>
-            </tr>
-            {/* row 2 */}
-            <tr className="border-0">
-              <td>
-                <div className="flex items-center gap-3">
-                  <div className="avatar">
-                    <div className="mask mask-squircle h-12 w-12">
-                    <Image src={ethereum} width={30} height={30} alt="ethereum-sepolia" />
-                    </div>
-                  </div>
-                  <div>
-                    <div className="font-bold">Ethereum Sepolia</div>
-                  </div>
-                </div>
-              </td>
-              <td className="text-center">4 Faucets</td>
-              <th className="flex justify-end">
-                <button className="btn btn-secondary text-white">Go to Faucets</button>
-              </th>
-            </tr>
-            
+            {networks.map((network, index) => (
+              <React.Fragment key={index}>
+                {network.faucets.map((faucet, faucetIndex) => (
+                  <tr key={faucetIndex}>
+                    <td>{network.name}</td>
+                    <td>
+                      <a href={faucet.url} target="_blank" rel="noopener noreferrer">
+                        {faucet.name}
+                      </a>
+                    </td>
+                    <td>
+                      <Image src={arrow} alt="arrow" />
+                    </td>
+                  </tr>
+                ))}
+              </React.Fragment>
+            ))}
           </tbody>
         </table>
       </div>
