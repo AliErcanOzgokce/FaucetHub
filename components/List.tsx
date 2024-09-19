@@ -1,10 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import arrow from "@/assets/arrow-right.png";
-import mantleTestnet from "@/data/Updated/eip155-5001.json"; // Adjust the path as necessary
+import {networks} from "@/data/networks" // Adjust the path as necessary
 
-function List() {
-  const networks = [mantleTestnet]; // Add more networks as needed
+function List() { // Add more networks as needed
 
   return (
     <div className="w-full p-10 rounded-2xl">

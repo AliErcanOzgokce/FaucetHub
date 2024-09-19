@@ -15,7 +15,7 @@ import eip155_11155111 from "@/data/Updated/eip155-11155111.json";
 import eip155_11155420 from "@/data/Updated/eip155-11155420.json";
 import eip155_168587773 from "@/data/Updated/eip155-168587773.json";
 
-const networks = [
+export const networks = [
   eip155_97,
   eip155_2442,
   eip155_4024,
