@@ -1,10 +1,16 @@
+"use client"
 import React from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
-import Link from "next/link";
 import arrow from "@/assets/arrow-right.png";
-import {networks} from "@/data/networks" // Adjust the path as necessary
+import networks from "@/data/networks"; // Adjust the path as necessary
 
-function List() { // Add more networks as needed
+function List() {
+  const router = useRouter();
+
+  const handleRowClick = (chainId: number) => {
+    router.push(`/network/${chainId}`);
+  };
 
   return (
     <div className="w-full p-10 rounded-2xl">
@@ -20,15 +26,11 @@ function List() { // Add more networks as needed
           </thead>
           <tbody className="w-full">
             {networks.map((network, index) => (
-              <tr key={index}>
+              <tr key={index} onClick={() => handleRowClick(Number(network.chainId))}>
                 <td>{network.name}</td>
                 <td>{network.faucets.length}</td>
                 <td>
-                  <Link href={`/network/${network.chainId}`}>
-                    
-                      <Image src={arrow} alt="arrow" />
-                    
-                  </Link>
+                  <Image src={arrow} alt="arrow" />
                 </td>
               </tr>
             ))}
