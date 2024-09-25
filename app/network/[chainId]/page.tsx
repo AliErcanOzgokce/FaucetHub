@@ -1,4 +1,4 @@
-"use client"
+"use client";
 // app/network/[chainId]/page.tsx
 import { useParams } from "next/navigation";
 import networks from "@/data/networks"; // Adjust the path as necessary
