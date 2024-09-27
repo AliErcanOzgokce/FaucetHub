@@ -1,7 +1,7 @@
 "use client";
-// app/network/[chainId]/page.tsx
 import { useParams } from "next/navigation";
 import networks from "@/data/networks"; // Adjust the path as necessary
+import Image from "next/image";
 
 function NetworkDetail() {
   const params = useParams();
@@ -9,48 +9,95 @@ function NetworkDetail() {
   const network = networks.find((net) => net.chainId === parseInt(chainId as string));
 
   if (!network) {
-    return <div>Network not found</div>;
+    return (
+      <div className="flex items-center justify-center h-screen bg-gray-100">
+        <div className="bg-white p-8 rounded-lg shadow-md">
+          <h1 className="text-2xl font-bold text-red-500">Network not found</h1>
+          <p className="text-gray-600">Please check the chainId and try again.</p>
+        </div>
+      </div>
+    );
   }
 
+  const getDomain = (url) => {
+    const { hostname } = new URL(url);
+    return hostname.replace('www.', '');
+  };
+
   return (
-    <div className="w-full p-10 rounded-2xl">
-      <h1>{network.name} Faucets</h1>
-      <div className="overflow-x-auto">
-        <table className="table table-lg" style={{ width: "100%" }}>
-          {/* head */}
-          <thead className="text-black">
-            <tr className="border-0">
-              <th>Name</th>
-              <th>URL</th>
-              <th>Amount</th>
-              <th>Limit</th>
-              <th>Social Login</th>
-              <th>Captcha</th>
-              <th>Mainnet Token Balance Required</th>
-              <th>Official</th>
-              <th>POW</th>
-            </tr>
-          </thead>
-          <tbody className="w-full">
-            {network.faucets.map((faucet, index) => (
-              <tr key={index}>
-                <td>{faucet.name}</td>
-                <td>
-                  <a href={faucet.url} target="_blank" rel="noopener noreferrer">
-                    {faucet.url}
-                  </a>
-                </td>
-                <td>{faucet.amount}</td>
-                <td>{faucet.limit}</td>
-                <td>{faucet.socialLogin ? "Yes" : "No"}</td>
-                <td>{faucet.captcha ? "Yes" : "No"}</td>
-                <td>{faucet.mainnetTokenBalanceRequired ? "Yes" : "No"}</td>
-                <td>{faucet.isOfficial ? "Yes" : "No"}</td>
-                <td>{faucet.isPOW ? "Yes" : "No"}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+    <div className="max-w-5xl mx-auto p-6 bg-white rounded-3xl shadow-2xl mt-10">
+      <header className="relative bg-gradient-to-r from-blue-600 to-blue-400 text-white p-8 rounded-2xl mb-10 overflow-hidden shadow-lg">
+        <h1 className="text-4xl font-bold tracking-wide">{network.name} Faucets</h1>
+        <p className="mt-2 text-lg font-light">
+          Find all faucets for <span className="font-semibold">{network.name}</span> on FaucetHub.
+        </p>
+        <Image
+          src={`/images/${network.name.toLowerCase()}.png`} // Adjust this to match your image path
+          alt={`${network.name} Logo`}
+          width={100}
+          height={100}
+          className="absolute top-4 right-4 opacity-10"
+        />
+      </header>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {network.faucets.map((faucet, index) => (
+          <div
+            key={index}
+            className="relative p-6 border border-gray-200 rounded-2xl shadow-lg transition-transform transform hover:scale-105"
+          >
+            <div className="absolute top-4 right-4 text-gray-400 text-sm">
+              {faucet.isOfficial && (
+                <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">Official</span>
+              )}
+              {faucet.isPOW && (
+                <span className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs ml-2">POW</span>
+              )}
+            </div>
+            <div className="flex flex-col items-center text-center mb-4">
+              <h2 className="text-xl font-bold text-gray-700">{faucet.name}</h2>
+              <a
+                href={faucet.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-1 text-blue-500 underline text-sm"
+              >
+                {getDomain(faucet.url)}
+              </a>
+            </div>
+            <div className="grid grid-cols-2 gap-4 text-sm text-gray-600 mt-4">
+              <div><strong>Amount:</strong> {faucet.amount}</div>
+              <div><strong>Limit:</strong> {faucet.limit}</div>
+              <div>
+                <strong>Social Login:</strong>{" "}
+                <span className={faucet.socialLogin ? "text-green-600" : "text-red-600"}>
+                  {faucet.socialLogin ? "Yes" : "No"}
+                </span>
+              </div>
+              <div>
+                <strong>Captcha:</strong>{" "}
+                <span className={faucet.captcha ? "text-green-600" : "text-red-600"}>
+                  {faucet.captcha ? "Yes" : "No"}
+                </span>
+              </div>
+              <div>
+                <strong>Mainnet Token Required:</strong>{" "}
+                <span className={faucet.mainnetTokenBalanceRequired ? "text-green-600" : "text-red-600"}>
+                  {faucet.mainnetTokenBalanceRequired ? "Yes" : "No"}
+                </span>
+              </div>
+              <div>
+                <strong>POW:</strong>{" "}
+                <span className={faucet.isPOW ? "text-green-600" : "text-red-600"}>
+                  {faucet.isPOW ? "Yes" : "No"}
+                </span>
+              </div>
+            </div>
+            <div className="absolute bottom-4 right-4 text-gray-400 text-xs">
+              Last updated: {new Date().toLocaleDateString()}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
