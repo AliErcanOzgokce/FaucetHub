@@ -22,3 +22,7 @@
     text-wrap: balance;
   }
 }
+
+.relative:hover span:last-child {
+  width: 100%;
+}

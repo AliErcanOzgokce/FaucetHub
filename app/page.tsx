@@ -1,9 +1,8 @@
 import List from "@/components/List";
-import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex bg-core-white flex-col items-center justify-between p-24">
+    <main className="flex flex-col items-center bg-gray-50 min-h-screen w-full">
       <List />
     </main>
   );
