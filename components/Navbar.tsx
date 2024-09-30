@@ -17,6 +17,7 @@ function Navbar() {
           Support Us!
         </button>
       </div>
+      s
     </header>
   );
 }
