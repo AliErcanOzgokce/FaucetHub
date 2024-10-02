@@ -76,6 +76,7 @@
   "chainId": 97,
   "networkId": 97,
   "slip44": 1,
+  "icon": "bnbchain",
   "explorers": [
     {
       "name": "bscscan-testnet",

@@ -6,16 +6,27 @@ import networks from "@/data/networks"; // Adjust the path as necessary
 
 function List() {
   const router = useRouter();
-  const [filteredNetworks, setFilteredNetworks] = useState(networks);
+  const [filteredNetworks, setFilteredNetworks] = useState(networks.evmBasedNetworks);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedNetworkType, setSelectedNetworkType] = useState("All Networks");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [icons, setIcons] = useState({}); // This will store icon data
 
-  const uniqueNetworkTypes = ["All Networks", ...new Set(networks.map((net) => net.type))];
+  const uniqueNetworkTypes = [
+    "All Networks",
+    "EVM Based",
+    "BTC Based",
+    "SOL Based",
+    "Other Networks",
+  ];
 
   useEffect(() => {
-    let updatedNetworks = networks;
+    let updatedNetworks = [
+      ...networks.evmBasedNetworks,
+      ...networks.btcBasedNetworks,
+      ...networks.solBasedNetworks,
+      ...networks.otherNetworks,
+    ];
 
     if (searchQuery) {
       updatedNetworks = updatedNetworks.filter((network) =>
@@ -24,9 +35,7 @@ function List() {
     }
 
     if (selectedNetworkType !== "All Networks") {
-      updatedNetworks = updatedNetworks.filter(
-        (network) => network.type === selectedNetworkType
-      );
+      updatedNetworks = networks[`${selectedNetworkType.toLowerCase().replace(" ", "")}`];
     }
 
     setFilteredNetworks(updatedNetworks);
@@ -62,8 +71,8 @@ function List() {
     loadIcons();
   }, [filteredNetworks]);
 
-  const handleCardClick = (chainId: number) => {
-    router.push(`/network/${chainId}`);
+  const handleCardClick = (networkName: string) => {
+    router.push(`/network/${networkName.toLowerCase().replace(/\s/g, "-")}`);
   };
 
   const handleSearch = (e) => {
@@ -81,7 +90,6 @@ function List() {
 
   return (
     <div className="max-w-7xl mx-auto px-6 sm:px-8 py-12 bg-white">
-      {/* Başlık Bölümü */}
       <div className="text-center mb-12">
         <h1 className="text-5xl font-bold text-gray-800 mb-4">Explore Networks</h1>
         <p className="text-lg text-gray-600">
@@ -89,9 +97,7 @@ function List() {
         </p>
       </div>
 
-      {/* Arama ve Network Seçimi */}
       <div className="flex flex-col md:flex-row items-center justify-between mb-8 space-y-4 md:space-y-0">
-        {/* Arama Çubuğu */}
         <div className="relative w-full md:w-2/3 lg:w-3/4">
           <input
             type="text"
@@ -101,7 +107,6 @@ function List() {
             className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 transition"
           />
         </div>
-        {/* Network Seçimi Dropdown */}
         <div className="relative w-full md:w-1/3 lg:w-1/4">
           <button
             onClick={toggleDropdown}
@@ -140,12 +145,11 @@ function List() {
         </div>
       </div>
 
-      {/* Network Kartları */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {filteredNetworks.map((network, index) => (
           <div
             key={index}
-            onClick={() => handleCardClick(Number(network.chainId))}
+            onClick={() => handleCardClick(network.name)}
             className="cursor-pointer bg-gray-50 border border-gray-200 rounded-xl shadow-sm p-6 transition-transform transform hover:-translate-y-1 hover:shadow-md"
           >
             <div className="flex items-center mb-4">
@@ -158,7 +162,7 @@ function List() {
                     height={32}
                   />
                 ) : (
-                  <span className="text-gray-500">No Icon</span> // Fallback if no icon is provided
+                  <span className="text-gray-500">No Icon</span>
                 )}
               </div>
               <h2 className="text-2xl font-semibold text-gray-800">{network.name}</h2>
@@ -196,6 +200,7 @@ function List() {
 
 export default List;
 
+
 // "use client";
 // import React, { useState, useEffect } from "react";
 // import { useRouter } from "next/navigation";
@@ -208,6 +213,7 @@ export default List;
 //   const [searchQuery, setSearchQuery] = useState("");
 //   const [selectedNetworkType, setSelectedNetworkType] = useState("All Networks");
 //   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+//   const [icons, setIcons] = useState({}); // This will store icon data
 
 //   const uniqueNetworkTypes = ["All Networks", ...new Set(networks.map((net) => net.type))];
 
@@ -228,6 +234,36 @@ export default List;
 
 //     setFilteredNetworks(updatedNetworks);
 //   }, [searchQuery, selectedNetworkType]);
+
+//   // Function to dynamically load icon data from "@/data/EVM Based/icons"
+//   const fetchIconData = async (iconName) => {
+//     try {
+//       const iconData = await import(`@/data/EVM Based/icons/${iconName}.json`);
+//       return iconData[0].url; // Get the IPFS URL from the JSON file
+//     } catch (error) {
+//       console.error(`Error loading icon for ${iconName}:`, error);
+//       return null;
+//     }
+//   };
+
+//   // Load the icons for the networks
+//   useEffect(() => {
+//     const loadIcons = async () => {
+//       const iconPromises = filteredNetworks.map(async (network) => {
+//         if (network.icon) {
+//           const iconUrl = await fetchIconData(network.icon);
+//           return { [network.icon]: iconUrl };
+//         }
+//         return null;
+//       });
+
+//       const iconResults = await Promise.all(iconPromises);
+//       const iconMap = iconResults.reduce((acc, icon) => ({ ...acc, ...icon }), {});
+//       setIcons(iconMap);
+//     };
+
+//     loadIcons();
+//   }, [filteredNetworks]);
 
 //   const handleCardClick = (chainId: number) => {
 //     router.push(`/network/${chainId}`);
@@ -317,12 +353,16 @@ export default List;
 //           >
 //             <div className="flex items-center mb-4">
 //               <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mr-4 shadow-sm">
-//                 <Image
-//                   src={`/icons/${network.icon}.png`} // Network ikonları için bir klasör oluşturun
-//                   alt={`${network.name} Icon`}
-//                   width={32}
-//                   height={32}
-//                 />
+//                 {icons[network.icon] ? (
+//                   <Image
+//                     src={`https://ipfs.io/ipfs/${icons[network.icon].split("ipfs://")[1]}`}
+//                     alt={`${network.name} Icon`}
+//                     width={32}
+//                     height={32}
+//                   />
+//                 ) : (
+//                   <span className="text-gray-500">No Icon</span> // Fallback if no icon is provided
+//                 )}
 //               </div>
 //               <h2 className="text-2xl font-semibold text-gray-800">{network.name}</h2>
 //             </div>
@@ -358,3 +398,4 @@ export default List;
 // }
 
 // export default List;
+
