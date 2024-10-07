@@ -4,13 +4,35 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import networks from "@/data/networks"; // Adjust the path as necessary
 
+interface Faucet {
+  name: string;
+  url: string;
+  amount: string;
+  limit?: string;
+  socialLogin: boolean;
+  captcha: boolean;
+  mainnetTokenBalanceRequired: boolean;
+  isOfficial: boolean;
+  isPOW: boolean;
+}
+
+interface Network {
+  name: string;
+  chain: string;
+  rpc: string[];
+  faucets: Faucet[];
+  icon?: string;
+  explorers: { name: string; url: string }[];
+}
+
+
 function List() {
   const router = useRouter();
-  const [filteredNetworks, setFilteredNetworks] = useState(networks.evmBasedNetworks);
+  const [filteredNetworks, setFilteredNetworks] = useState<Network[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedNetworkType, setSelectedNetworkType] = useState("All Networks");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [icons, setIcons] = useState({}); // This will store icon data
+  const [icons, setIcons] = useState<{ [key: string]: string | null }>({}); // This will store icon data
 
   const uniqueNetworkTypes = [
     "All Networks",
@@ -21,28 +43,43 @@ function List() {
   ];
 
   useEffect(() => {
-    let updatedNetworks = [
+    let updatedNetworks: Network[] = [
       ...networks.evmBasedNetworks,
       ...networks.btcBasedNetworks,
       ...networks.solBasedNetworks,
       ...networks.otherNetworks,
-    ];
-
+    ].map(network => ({
+      ...network,
+      explorers: network.explorers.map(explorer => 
+        typeof explorer === 'string' ? { name: explorer, url: explorer } : explorer
+      )
+    }));
+  
+    // Filter by search query
     if (searchQuery) {
       updatedNetworks = updatedNetworks.filter((network) =>
         network.name.toLowerCase().includes(searchQuery.toLowerCase())
       );
     }
-
+  
+    // Filter by network type
     if (selectedNetworkType !== "All Networks") {
-      updatedNetworks = networks[`${selectedNetworkType.toLowerCase().replace(" ", "")}`];
+      const networkTypeKey = selectedNetworkType.toLowerCase().replace(" ", "") as keyof typeof networks;
+      updatedNetworks = (networks[networkTypeKey] || []).map(network => ({
+        ...network,
+        explorers: network.explorers.map(explorer => 
+          typeof explorer === 'string' ? { name: explorer, url: explorer } : explorer
+        )
+      }));
     }
-
+  
     setFilteredNetworks(updatedNetworks);
   }, [searchQuery, selectedNetworkType]);
+  
+
 
   // Function to dynamically load icon data from "@/data/EVM Based/icons"
-  const fetchIconData = async (iconName) => {
+  const fetchIconData = async (iconName: string) => {
     try {
       const iconData = await import(`@/data/EVM Based/icons/${iconName}.json`);
       return iconData[0].url; // Get the IPFS URL from the JSON file
@@ -65,7 +102,9 @@ function List() {
 
       const iconResults = await Promise.all(iconPromises);
       const iconMap = iconResults.reduce((acc, icon) => ({ ...acc, ...icon }), {});
-      setIcons(iconMap);
+      if (iconMap) {
+        setIcons(iconMap);
+      }
     };
 
     loadIcons();
@@ -75,7 +114,7 @@ function List() {
     router.push(`/network/${networkName.toLowerCase().replace(/\s/g, "-")}`);
   };
 
-  const handleSearch = (e) => {
+  const handleSearch = (e: { target: { value: React.SetStateAction<string>; }; }) => {
     setSearchQuery(e.target.value);
   };
 
@@ -83,7 +122,7 @@ function List() {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-  const handleNetworkSelect = (networkType) => {
+  const handleNetworkSelect = (networkType: React.SetStateAction<string>) => {
     setSelectedNetworkType(networkType);
     setIsDropdownOpen(false);
   };
@@ -154,7 +193,7 @@ function List() {
           >
             <div className="flex items-center mb-4">
               <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mr-4 shadow-sm">
-                {icons[network.icon] ? (
+                {network.icon && icons[network.icon] ? (
                   <Image
                     src={`https://ipfs.io/ipfs/${icons[network.icon].split("ipfs://")[1]}`}
                     alt={`${network.name} Icon`}
