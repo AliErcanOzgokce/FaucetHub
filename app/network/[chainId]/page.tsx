@@ -5,10 +5,18 @@ import Image from "next/image";
 
 function NetworkDetail() {
   const params = useParams();
-  const { chainId } = params;
-  const network = networks.find((net) => net.chainId === parseInt(chainId as string));
+  const { chainName } = params;
+
+  const formatName = (name: string) => {
+    console.log("Name: ", name);
+    return name.toLowerCase().replace(/\s+/g, '-');
+  };
+
+  const network = networks.evmBasedNetworks.find((net) => formatName(net.name) === chainName as string);
 
   if (!network) {
+    console.log("network: ", network);
+    console.log("chainName: ", chainName);
     return (
       <div className="flex items-center justify-center h-screen bg-gray-50">
         <div className="bg-white p-8 rounded-md shadow-md">

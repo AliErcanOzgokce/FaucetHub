@@ -195,7 +195,7 @@ function List() {
               <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mr-4 shadow-sm">
                 {network.icon && icons[network.icon] ? (
                   <Image
-                    src={`https://ipfs.io/ipfs/${icons[network.icon].split("ipfs://")[1]}`}
+                    src={`https://ipfs.io/ipfs/${icons[network.icon]?.split("ipfs://")[1] ?? ""}`}
                     alt={`${network.name} Icon`}
                     width={32}
                     height={32}
