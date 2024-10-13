@@ -76,7 +76,7 @@ function NetworkDetail() {
               <div className="flex flex-col items-end">
                 <Image src={arrow} width={34} height={34} alt="arrow" />
                 <p className="text-gray-400 text-xs mt-1">Limit: {faucet.limit}</p>
-                <div className="text-3xl font-bold text-yellow-500">
+                <div className="text-2xl font-bold text-yellow-500">
                   {faucet.amount} {network.nativeCurrency.symbol} {/* Displaying the amount with the native currency symbol */}
                 </div>
               </div>
