@@ -35,7 +35,7 @@ function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 flex items-center justify-between h-16">
         <Link href="/">
-          <Image src={logo} alt="logo" width={150} height={50} className="cursor-pointer" />
+          <Image src={logo} alt="logo" width={200} height={75} className="cursor-pointer" />
         </Link>
         <button
           data-theme="myTheme"

@@ -31,11 +31,11 @@ function NetworkDetail() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-6 sm:px-8 py-12 bg-black">
+    <div className="max-w-7xl min-h-[80vh] mx-auto px-6 sm:px-8 py-12 bg-black">
       <header className="text-left mb-10">
         <h1 className="text-4xl font-bold text-white">{network.name} Faucets</h1>
         <p className="mt-2 text-lg text-gray-400">
-          Find all faucets for <span className="font-semibold">{network.name}</span> on FaucetHub.
+          Find the all <span className="font-semibold">{network.name}</span> faucets on FaucetHub.
         </p>
       </header>
 
