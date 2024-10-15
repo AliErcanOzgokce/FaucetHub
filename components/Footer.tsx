@@ -20,15 +20,6 @@ function Footer() {
             <Image src={logo} width={150} height={50} alt="logo" className="mx-auto md:mx-0" />
             <p className="mt-4 text-gray-400">All Crypto Faucets For All Chains</p>
           </div>
-          <ul className="flex space-x-6">
-            {footerNavs.map((item, idx) => (
-              <li key={idx}>
-                <Link href={item.href} className="text-gray-400 hover:text-gray-200 transition duration-300">
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
         </div>
         <div className="mt-6 text-center text-gray-500">
           Made by <span className="font-semibold text-white">Ali Ercan Özgökçe</span>
