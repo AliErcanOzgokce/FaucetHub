@@ -156,25 +156,28 @@ function List() {
           <div
             key={index}
             onClick={() => handleCardClick(Number(network.chainId))}
-            className="cursor-pointer bg-black border border-[#171717] drop-shadow-[0_35px_35px_#1e40af] rounded-xl shadow-lg p-6 transition-transform transform hover:-translate-y-1 hover:shadow-xl"
+            className="cursor-pointer bg-black border border-[#171717] drop-shadow-[0_35px_35px_#1e40af] rounded-xl shadow-lg p-5 flex flex-col h-full justify-center items-between transition-transform transform hover:-translate-y-1 hover:shadow-xl"
           >
-            <div className="flex items-center mb-4">
-              <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center mr-4 shadow-md">
-                {icons[network.icon] ? (
-                  <Image
-                    src={icons[network.icon]}
-                    alt={`${network.name} Icon`}
-                    width={32}
-                    height={32}
-                  />
-                ) : (
-                  <span className="text-gray-500">No Icon</span>
-                )}
+            <div className="flex justify-between">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center mr-4 shadow-md">
+                  {icons[network.icon] ? (
+                    <Image
+                      src={icons[network.icon]}
+                      alt={`${network.name} Icon`}
+                      width={32}
+                      height={32}
+                    />
+                  ) : (
+                    <span className="text-gray-500">No Icon</span>
+                  )}
+                </div>
+                <h2 className="text-2xl font-semibold text-white">{network.name}</h2>
               </div>
-              <h2 className="text-2xl font-semibold text-white">{network.name}</h2>
+
+              
             </div>
-            <p className="text-gray-400 mb-4">Faucets available: {network.faucets.length}</p>
-            <div className="mt-auto">
+            <div className=" flex items-end justify-between">
               <button className="text-blue-500 hover:text-blue-400 flex items-center font-medium">
                 View Details
                 <svg
@@ -191,6 +194,13 @@ function List() {
                   />
                 </svg>
               </button>
+              {/* Amount Section */}
+              <div className="flex flex-col items-end">
+                <p className="text-gray-400 text-xs">Faucets available:</p>
+                <div className="text-2xl font-bold text-yellow-500">
+                  {network.faucets.length}
+                </div>
+              </div>
             </div>
           </div>
         ))}
@@ -255,10 +265,10 @@ export default List;
 //     setFilteredNetworks(updatedNetworks);
 //   }, [searchQuery, selectedNetworkType]);
 
-//   const fetchIconData = async (iconName) => {
+//   const fetchIconData = (iconName) => {
 //     try {
-//       const iconData = await import(`@/data/EVM Based/icons/${iconName}.json`);
-//       return iconData[0].url;
+//       const iconUrl = require(`@/data/images/${iconName}.png`);
+//       return iconUrl;
 //     } catch (error) {
 //       console.error(`Error loading icon for ${iconName}:`, error);
 //       return null;
@@ -266,17 +276,14 @@ export default List;
 //   };
 
 //   useEffect(() => {
-//     const loadIcons = async () => {
-//       const iconPromises = filteredNetworks.map(async (network) => {
+//     const loadIcons = () => {
+//       const iconMap = filteredNetworks.reduce((acc, network) => {
 //         if (network.icon) {
-//           const iconUrl = await fetchIconData(network.icon);
-//           return { [network.icon]: iconUrl };
+//           const iconUrl = fetchIconData(network.icon);
+//           return { ...acc, [network.icon]: iconUrl };
 //         }
-//         return null;
-//       });
-
-//       const iconResults = await Promise.all(iconPromises);
-//       const iconMap = iconResults.reduce((acc, icon) => ({ ...acc, ...icon }), {});
+//         return acc;
+//       }, {});
 //       setIcons(iconMap);
 //     };
 
@@ -373,7 +380,7 @@ export default List;
 //               <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center mr-4 shadow-md">
 //                 {icons[network.icon] ? (
 //                   <Image
-//                     src={`https://ipfs.io/ipfs/${icons[network.icon].split("ipfs://")[1]}`}
+//                     src={icons[network.icon]}
 //                     alt={`${network.name} Icon`}
 //                     width={32}
 //                     height={32}
@@ -416,6 +423,4 @@ export default List;
 // }
 
 // export default List;
-
-
 

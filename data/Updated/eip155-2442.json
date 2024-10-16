@@ -1,5 +1,5 @@
 {
-  "name": "Polygon zkEVM Cardona Testnet",
+  "name": "Polygon zkEVM Cardona",
   "title": "Polygon zkEVM Cardona Testnet",
   "chain": "Polygon",
   "rpc": ["https://rpc.cardona.zkevm-rpc.com"],
