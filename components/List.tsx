@@ -4,6 +4,14 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import networks from "@/data/networks"; // Adjust the path as necessary
 
+// Define the Network type
+interface Network {
+  name: string;
+  shortName: string;
+  icon?: string;
+  faucets: any[];
+}
+
 function List() {
   const router = useRouter();
   const [filteredNetworks, setFilteredNetworks] = useState<Network[]>([]);
@@ -171,7 +179,7 @@ function List() {
             <div className="flex justify-between">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center mr-4 shadow-md">
-                  {icons[network.icon] ? (
+                  {network.icon && icons[network.icon] ? (
                     <Image
                       src={icons[network.icon] || '../app/favicon.ico'}
                       alt={`${network.name} Icon`}
