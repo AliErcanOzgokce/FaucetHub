@@ -58,7 +58,7 @@
   "shortName": "bitcoin-testnet",
   "chainId": 2442,
   "networkId": 2442,
-  "icon": "btc_testnet",
+  "icon": "btc",
   "explorers": [
     {
       "name": "blockstream",

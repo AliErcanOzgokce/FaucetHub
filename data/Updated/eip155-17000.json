@@ -1,5 +1,5 @@
 {
-  "name": "Holesky",
+  "name": "Ethereum Holesky",
   "title": "Ethereum Testnet Holesky",
   "chain": "ETH",
   "rpc": [

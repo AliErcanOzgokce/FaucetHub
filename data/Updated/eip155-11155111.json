@@ -172,6 +172,7 @@
   "chainId": 11155111,
   "networkId": 11155111,
   "slip44": 1,
+  "icon": "ethereum",
   "explorers": [
     {
       "name": "etherscan-sepolia",

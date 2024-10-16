@@ -119,6 +119,7 @@
   "chainId": 534351,
   "networkId": 534351,
   "slip44": 1,
+  "icon": "scroll",
   "explorers": [
     {
       "name": "Scroll Sepolia Etherscan",

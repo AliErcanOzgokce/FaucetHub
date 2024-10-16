@@ -58,7 +58,7 @@
   "shortName": "solana-devnet",
   "chainId": 901,
   "networkId": 901,
-  "icon": "sol_devnet",
+  "icon": "solana",
   "explorers": [],
   "parent": {
     "type": "L1",

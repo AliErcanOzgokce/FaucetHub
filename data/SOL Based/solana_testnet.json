@@ -58,7 +58,7 @@
   "shortName": "solana-testnet",
   "chainId": 900,
   "networkId": 900,
-  "icon": "sol_testnet",
+  "icon": "solana",
   "explorers": [],
   "parent": {
     "type": "L1",

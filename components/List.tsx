@@ -47,10 +47,10 @@ function List() {
     setFilteredNetworks(updatedNetworks);
   }, [searchQuery, selectedNetworkType]);
 
-  const fetchIconData = async (iconName) => {
+  const fetchIconData = (iconName) => {
     try {
-      const iconData = await import(`@/data/EVM Based/icons/${iconName}.json`);
-      return iconData[0].url;
+      const iconUrl = require(`@/data/images/${iconName}.png`);
+      return iconUrl;
     } catch (error) {
       console.error(`Error loading icon for ${iconName}:`, error);
       return null;
@@ -58,17 +58,14 @@ function List() {
   };
 
   useEffect(() => {
-    const loadIcons = async () => {
-      const iconPromises = filteredNetworks.map(async (network) => {
+    const loadIcons = () => {
+      const iconMap = filteredNetworks.reduce((acc, network) => {
         if (network.icon) {
-          const iconUrl = await fetchIconData(network.icon);
-          return { [network.icon]: iconUrl };
+          const iconUrl = fetchIconData(network.icon);
+          return { ...acc, [network.icon]: iconUrl };
         }
-        return null;
-      });
-
-      const iconResults = await Promise.all(iconPromises);
-      const iconMap = iconResults.reduce((acc, icon) => ({ ...acc, ...icon }), {});
+        return acc;
+      }, {});
       setIcons(iconMap);
     };
 
@@ -165,7 +162,7 @@ function List() {
               <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center mr-4 shadow-md">
                 {icons[network.icon] ? (
                   <Image
-                    src={`https://ipfs.io/ipfs/${icons[network.icon].split("ipfs://")[1]}`}
+                    src={icons[network.icon]}
                     alt={`${network.name} Icon`}
                     width={32}
                     height={32}
@@ -209,8 +206,6 @@ function List() {
 
 export default List;
 
-
-
 // "use client";
 // import React, { useState, useEffect } from "react";
 // import { useRouter } from "next/navigation";
@@ -223,7 +218,7 @@ export default List;
 //   const [searchQuery, setSearchQuery] = useState("");
 //   const [selectedNetworkType, setSelectedNetworkType] = useState("All Networks");
 //   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-//   const [icons, setIcons] = useState({}); // This will store icon data
+//   const [icons, setIcons] = useState({});
 
 //   const uniqueNetworkTypes = [
 //     "All Networks",
@@ -260,18 +255,16 @@ export default List;
 //     setFilteredNetworks(updatedNetworks);
 //   }, [searchQuery, selectedNetworkType]);
 
-//   // Function to dynamically load icon data from "@/data/EVM Based/icons"
 //   const fetchIconData = async (iconName) => {
 //     try {
 //       const iconData = await import(`@/data/EVM Based/icons/${iconName}.json`);
-//       return iconData[0].url; // Get the IPFS URL from the JSON file
+//       return iconData[0].url;
 //     } catch (error) {
 //       console.error(`Error loading icon for ${iconName}:`, error);
 //       return null;
 //     }
 //   };
 
-//   // Load the icons for the networks
 //   useEffect(() => {
 //     const loadIcons = async () => {
 //       const iconPromises = filteredNetworks.map(async (network) => {
@@ -308,11 +301,11 @@ export default List;
 //   };
 
 //   return (
-//     <div className="max-w-7xl mx-auto px-6 sm:px-8 py-12 bg-white">
+//     <div className="max-w-7xl mx-auto px-6 sm:px-8 py-12 bg-black">
 //       {/* Başlık Bölümü */}
 //       <div className="text-center mb-12">
-//         <h1 className="text-5xl font-bold text-gray-800 mb-4">Explore Networks</h1>
-//         <p className="text-lg text-gray-600">
+//         <h1 className="text-5xl font-bold text-white mb-4">Explore Networks</h1>
+//         <p className="text-lg text-gray-400">
 //           Discover and find faucets for various blockchain networks.
 //         </p>
 //       </div>
@@ -326,14 +319,14 @@ export default List;
 //             value={searchQuery}
 //             onChange={handleSearch}
 //             placeholder="Search for networks..."
-//             className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 transition"
+//             className="w-full px-4 py-3 bg-black border border-[#171717] rounded-md  text-white focus:outline-none focus:border-gray-500 shadow-sm transition"
 //           />
 //         </div>
 //         {/* Network Seçimi Dropdown */}
 //         <div className="relative w-full md:w-1/3 lg:w-1/4">
 //           <button
 //             onClick={toggleDropdown}
-//             className="flex items-center justify-between w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none transition"
+//             className="flex items-center justify-between w-full px-4 py-3 bg-black border border-[#171717] rounded-md  text-white focus:outline-none shadow-sm transition"
 //           >
 //             {selectedNetworkType}
 //             <svg
@@ -353,12 +346,12 @@ export default List;
 //             </svg>
 //           </button>
 //           {isDropdownOpen && (
-//             <div className="absolute mt-2 w-full bg-white border border-gray-200 rounded-md shadow-lg z-10">
+//             <div className="absolute mt-2 w-full bg-black border border-[#171717] rounded-md shadow-lg z-10">
 //               {uniqueNetworkTypes.map((networkType, index) => (
 //                 <button
 //                   key={index}
 //                   onClick={() => handleNetworkSelect(networkType)}
-//                   className="w-full text-left px-4 py-2 hover:bg-gray-100 transition"
+//                   className="w-full text-left px-4 py-2 hover:bg-gray-800 text-white transition"
 //                 >
 //                   {networkType}
 //                 </button>
@@ -374,10 +367,10 @@ export default List;
 //           <div
 //             key={index}
 //             onClick={() => handleCardClick(Number(network.chainId))}
-//             className="cursor-pointer bg-gray-50 border border-gray-200 rounded-xl shadow-sm p-6 transition-transform transform hover:-translate-y-1 hover:shadow-md"
+//             className="cursor-pointer bg-black border border-[#171717] drop-shadow-[0_35px_35px_#1e40af] rounded-xl shadow-lg p-6 transition-transform transform hover:-translate-y-1 hover:shadow-xl"
 //           >
 //             <div className="flex items-center mb-4">
-//               <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mr-4 shadow-sm">
+//               <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center mr-4 shadow-md">
 //                 {icons[network.icon] ? (
 //                   <Image
 //                     src={`https://ipfs.io/ipfs/${icons[network.icon].split("ipfs://")[1]}`}
@@ -386,14 +379,14 @@ export default List;
 //                     height={32}
 //                   />
 //                 ) : (
-//                   <span className="text-gray-500">No Icon</span> // Fallback if no icon is provided
+//                   <span className="text-gray-500">No Icon</span>
 //                 )}
 //               </div>
-//               <h2 className="text-2xl font-semibold text-gray-800">{network.name}</h2>
+//               <h2 className="text-2xl font-semibold text-white">{network.name}</h2>
 //             </div>
-//             <p className="text-gray-600 mb-4">Faucets available: {network.faucets.length}</p>
+//             <p className="text-gray-400 mb-4">Faucets available: {network.faucets.length}</p>
 //             <div className="mt-auto">
-//               <button className="text-blue-600 hover:text-blue-800 flex items-center font-medium">
+//               <button className="text-blue-500 hover:text-blue-400 flex items-center font-medium">
 //                 View Details
 //                 <svg
 //                   className="w-4 h-4 ml-1"
@@ -423,4 +416,6 @@ export default List;
 // }
 
 // export default List;
+
+
 

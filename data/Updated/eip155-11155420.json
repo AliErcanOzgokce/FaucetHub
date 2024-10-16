@@ -139,6 +139,7 @@
   "chainId": 11155420,
   "networkId": 11155420,
   "slip44": 1,
+  "icon": "optimism",
   "explorers": [
     {
       "name": "opscout",

@@ -39,6 +39,7 @@
     }
   ],
   "infoURL": "https://docs.celo.org/",
+  "icon": "celo",
   "explorers": [
     {
       "name": "Alfajoresscan",
