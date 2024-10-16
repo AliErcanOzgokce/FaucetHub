@@ -1,37 +1,82 @@
-"use client";
+import { Metadata, ResolvingMetadata } from "next";
 import { useParams } from "next/navigation";
 import networks from "@/data/networks"; // Adjust the path as necessary
 import Image from "next/image";
 import arrow from "@/assets/arrow-up-right.svg"; // Ensure the correct path
 
-function NetworkDetail() {
-  const params = useParams();
-  const { shortName } = params;  // Now fetching shortName from URL
+type Props = {
+  params: { shortName: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+// Function to generate dynamic metadata based on the `shortName` param
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const { shortName } = params;
+
+  // Find the corresponding network using the shortName
   const network = [
     ...networks.evmBasedNetworks,
     ...networks.btcBasedNetworks,
     ...networks.solBasedNetworks,
     ...networks.otherNetworks,
-  ].find((net) => net.shortName === shortName);  // Search for shortName instead of chainId
+  ].find((net) => net.shortName === shortName);
 
+  // Handle case where the network is not found
+  if (!network) {
+    return {
+      title: "Network Not Found - FaucetHub",
+      description: "The requested network could not be found on FaucetHub.",
+    };
+  }
+
+  // Optionally extend parent metadata
+  const previousImages = (await parent).openGraph?.images || [];
+
+  return {
+    title: `${network.name} Faucets - FaucetHub`,
+    description: `Find all ${network.name} Faucets on FaucetHub.`,
+    openGraph: {
+      images: [`/images/networks/${network.icon}.png`, ...previousImages],
+    },
+  };
+}
+
+// Main page component for rendering network details
+export default function NetworkDetail({ params }: Props) {
+  const { shortName } = params;
+
+  // Find the network data by shortName
+  const network = [
+    ...networks.evmBasedNetworks,
+    ...networks.btcBasedNetworks,
+    ...networks.solBasedNetworks,
+    ...networks.otherNetworks,
+  ].find((net) => net.shortName === shortName);
+
+  // If network is not found, show error message
   if (!network) {
     return (
       <div className="flex items-center justify-center h-screen bg-black">
         <div className="bg-black p-8 rounded-md shadow-md">
           <h1 className="text-2xl font-bold text-red-500">Network not found</h1>
-          <p className="text-gray-400">Please check the network shortName and try again.</p>
+          <p className="text-gray-400">
+            Please check the network shortName and try again.
+          </p>
         </div>
       </div>
     );
   }
 
-  // Helper function to format URLs to include 'www.'
+  // Helper function to format URLs
   const formatUrl = (url: string | URL): string => {
     try {
       const { hostname } = new URL(url.toString());
-      return hostname.startsWith('www.') ? hostname : `www.${hostname}`; // Ensure 'www.' is present
+      return hostname.startsWith("www.") ? hostname : `www.${hostname}`;
     } catch (error) {
-      return url.toString(); // Return the original URL as a string if there's an error parsing
+      return url.toString();
     }
   };
 
@@ -56,23 +101,35 @@ function NetworkDetail() {
             <div className="flex justify-between">
               <div className="w-2/3">
                 <h2 className="text-xl font-semibold text-white truncate">{faucet.name}</h2>
-                <p className="mt-1 text-blue-500 underline text-xs">{formatUrl(faucet.url)}</p>
-                {/* Badges displayed here */}
+                <p className="mt-1 text-blue-500 underline text-xs">
+                  {formatUrl(faucet.url)}
+                </p>
+                {/* Display badges for the faucet */}
                 <div className="flex flex-wrap w-full gap-2 mt-5">
                   {faucet.socialLogin && (
-                    <div className="bg-blue-600 text-white px-1.5 py-0.5 rounded-full text-xs">Social Login</div>
+                    <div className="bg-blue-600 text-white px-1.5 py-0.5 rounded-full text-xs">
+                      Social Login
+                    </div>
                   )}
                   {faucet.captcha && (
-                    <div className="bg-purple-600 text-white px-1.5 py-0.5 rounded-full text-xs">Captcha</div>
+                    <div className="bg-purple-600 text-white px-1.5 py-0.5 rounded-full text-xs">
+                      Captcha
+                    </div>
                   )}
                   {faucet.mainnetTokenBalanceRequired && (
-                    <div className="bg-red-600 text-white px-1.5 py-0.5 rounded-full text-xs">Mainnet Token</div>
+                    <div className="bg-red-600 text-white px-1.5 py-0.5 rounded-full text-xs">
+                      Mainnet Token
+                    </div>
                   )}
                   {faucet.isOfficial && (
-                    <div className="bg-green-800 text-green-200 px-1.5 py-0.5 rounded-full text-xs">Official</div>
+                    <div className="bg-green-800 text-green-200 px-1.5 py-0.5 rounded-full text-xs">
+                      Official
+                    </div>
                   )}
                   {faucet.isPOW && (
-                    <div className="bg-yellow-800 text-yellow-200 px-1.5 py-0.5 rounded-full text-xs">POW</div>
+                    <div className="bg-yellow-800 text-yellow-200 px-1.5 py-0.5 rounded-full text-xs">
+                      POW
+                    </div>
                   )}
                 </div>
               </div>
@@ -82,7 +139,7 @@ function NetworkDetail() {
                 <Image src={arrow} width={34} height={34} alt="arrow" />
                 <p className="text-gray-400 text-xs mt-1">Limit: {faucet.limit}</p>
                 <div className="text-2xl font-bold text-yellow-500">
-                  {faucet.amount} {network.nativeCurrency.symbol} {/* Displaying the amount with the native currency symbol */}
+                  {faucet.amount} {network.nativeCurrency.symbol}
                 </div>
               </div>
             </div>
@@ -92,6 +149,4 @@ function NetworkDetail() {
     </div>
   );
 }
-
-export default NetworkDetail;
 
