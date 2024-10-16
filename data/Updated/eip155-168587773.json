@@ -80,7 +80,7 @@
     "decimals": 18
   },
   "infoURL": "https://blast.io/",
-  "shortName": "blastsepolia",
+  "shortName": "blast-sepolia",
   "chainId": 168587773,
   "networkId": 168587773,
   "icon": "blast",

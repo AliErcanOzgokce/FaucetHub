@@ -72,7 +72,7 @@
     "decimals": 18
   },
   "infoURL": "https://www.bnbchain.org/en",
-  "shortName": "bnbt",
+  "shortName": "bnb-testnet-chain",
   "chainId": 97,
   "networkId": 97,
   "slip44": 1,

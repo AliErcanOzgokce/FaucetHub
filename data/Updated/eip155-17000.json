@@ -139,7 +139,7 @@
     "decimals": 18
   },
   "infoURL": "https://holesky.ethpandaops.io",
-  "shortName": "holesky",
+  "shortName": "ethereum-holesky",
   "chainId": 17000,
   "networkId": 17000,
   "slip44": 1,

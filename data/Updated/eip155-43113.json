@@ -59,7 +59,7 @@
     "decimals": 18
   },
   "infoURL": "https://cchain.explorer.avax-test.network",
-  "shortName": "Fuji",
+  "shortName": "avalanche-fuji",
   "chainId": 43113,
   "networkId": 1,
   "slip44": 1,
