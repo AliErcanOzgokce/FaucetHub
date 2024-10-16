@@ -6,15 +6,20 @@ import arrow from "@/assets/arrow-up-right.svg"; // Ensure the correct path
 
 function NetworkDetail() {
   const params = useParams();
-  const { chainId } = params;
-  const network = networks.evmBasedNetworks.find((net) => net.chainId === parseInt(chainId as string));
+  const { shortName } = params;  // Now fetching shortName from URL
+  const network = [
+    ...networks.evmBasedNetworks,
+    ...networks.btcBasedNetworks,
+    ...networks.solBasedNetworks,
+    ...networks.otherNetworks,
+  ].find((net) => net.shortName === shortName);  // Search for shortName instead of chainId
 
   if (!network) {
     return (
       <div className="flex items-center justify-center h-screen bg-black">
         <div className="bg-black p-8 rounded-md shadow-md">
           <h1 className="text-2xl font-bold text-red-500">Network not found</h1>
-          <p className="text-gray-400">Please check the chainId and try again.</p>
+          <p className="text-gray-400">Please check the network shortName and try again.</p>
         </div>
       </div>
     );
@@ -35,7 +40,7 @@ function NetworkDetail() {
       <header className="text-left mb-10">
         <h1 className="text-4xl font-bold text-white">{network.name} Faucets</h1>
         <p className="mt-2 text-lg text-gray-400">
-          Find the all <span className="font-semibold">{network.name}</span> faucets on FaucetHub.
+          Find all <span className="font-semibold">{network.name}</span> faucets on FaucetHub.
         </p>
       </header>
 
@@ -89,3 +94,4 @@ function NetworkDetail() {
 }
 
 export default NetworkDetail;
+

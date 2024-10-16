@@ -116,7 +116,7 @@
   "shortName": "arb-sep",
   "chainId": 421614,
   "networkId": 421614,
-  "icon": "arbitrum-sepolia",
+  "icon": "arbitrum",
   "slip44": 1,
   "explorers": [
     {
