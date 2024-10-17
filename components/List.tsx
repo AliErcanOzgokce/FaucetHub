@@ -108,7 +108,7 @@ function List() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-6 sm:px-8 py-12 bg-black">
+    <div className="max-w-7xl mx-auto px-3 sm:px-8 py-12 bg-black">
       {/* Header Section */}
       <div className="text-center mb-12">
         <h1 className="text-5xl font-bold text-white mb-4">Explore Networks</h1>
