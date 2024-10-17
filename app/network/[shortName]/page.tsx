@@ -81,11 +81,14 @@ export default function NetworkDetail({ params }: Props) {
   };
 
   return (
-    <div className="max-w-7xl min-h-[80vh] mx-auto px-6 sm:px-8 py-12 bg-black">
-      <header className="text-left mb-10">
-        <h1 className="text-4xl font-bold text-white">{network.name} Faucets</h1>
-        <p className="mt-2 text-lg text-gray-400">
-          Find all <span className="font-semibold">{network.name}</span> faucets on FaucetHub.
+    <div className="max-w-7xl min-h-[80vh] mx-auto px-3 sm:px-8 py-12 bg-black">
+      <header className="text-left mb-10 px-4 ">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
+          {network.name} Faucets
+        </h1>
+        <p className="mt-2 text-base md:text-lg lg:text-xl text-gray-400">
+          Find all <span className="font-semibold">{network.name}</span> faucets
+          on FaucetHub.
         </p>
       </header>
 
@@ -100,7 +103,9 @@ export default function NetworkDetail({ params }: Props) {
           >
             <div className="flex justify-between">
               <div className="w-2/3">
-                <h2 className="text-xl font-semibold text-white truncate">{faucet.name}</h2>
+                <h2 className="text-xl font-semibold text-white truncate">
+                  {faucet.name}
+                </h2>
                 <p className="mt-1 text-blue-500 underline text-xs">
                   {formatUrl(faucet.url)}
                 </p>
@@ -137,7 +142,9 @@ export default function NetworkDetail({ params }: Props) {
               {/* Amount Section */}
               <div className="flex flex-col items-end">
                 <Image src={arrow} width={34} height={34} alt="arrow" />
-                <p className="text-gray-400 text-xs mt-1">Limit: {faucet.limit}</p>
+                <p className="text-gray-400 text-xs mt-1">
+                  Limit: {faucet.limit}
+                </p>
                 <div className="text-2xl font-bold text-yellow-500">
                   {faucet.amount} {network.nativeCurrency.symbol}
                 </div>
@@ -149,4 +156,3 @@ export default function NetworkDetail({ params }: Props) {
     </div>
   );
 }
-

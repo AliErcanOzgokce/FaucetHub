@@ -3,19 +3,16 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "@/assets/white_logo (1).png";
+import linkedin from "@/assets/linkedin.png";
+import x from "@/assets/x.png";
+import github from "@/assets/github.png"
 
 function Footer() {
-  const footerNavs = [
-    { name: "Home", href: "/" },
-    { name: "Features", href: "/features" },
-    { name: "Pricing", href: "/pricing" },
-    { name: "Contact", href: "/contact" },
-  ];
-
   return (
     <footer className="bg-black border-t border-gray-700 py-8">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
+          {/* Logo and Tagline */}
           <div className="text-center md:text-left mb-6 md:mb-0">
             <Image
               src={logo}
@@ -28,9 +25,24 @@ function Footer() {
               All Crypto Faucets For All Chains
             </p>
           </div>
-          <div className="mt-6 text-center text-gray-500">
-            Made by{" "}
-            <span className="font-semibold text-white">Ali Ercan Özgökçe</span>
+
+          {/* Credit and Social Links */}
+          <div className="text-center md:text-right mt-6 md:mt-0">
+            {/* Social Links */}
+            <div className="flex justify-center md:justify-end space-x-6 mb-4">
+              <Link href="https://x.com/aeoWeb3" target="_blank" passHref>
+                <Image src={x} width={30} height={30} alt="X" />
+              </Link>
+              <Link href="https://github.com/aliercanozgokce" target="_blank" passHref>
+                <Image src={github} width={30} height={30} alt="Website" />
+              </Link>
+            </div>
+
+            {/* Made By */}
+            <p className="text-gray-500">
+              Made by{" "}
+              <span className="font-semibold text-white">Ali Ercan Özgökçe</span>
+            </p>
           </div>
         </div>
       </div>
@@ -39,3 +51,5 @@ function Footer() {
 }
 
 export default Footer;
+
+

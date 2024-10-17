@@ -16,7 +16,8 @@ function List() {
   const router = useRouter();
   const [filteredNetworks, setFilteredNetworks] = useState<Network[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedNetworkType, setSelectedNetworkType] = useState("All Networks");
+  const [selectedNetworkType, setSelectedNetworkType] =
+    useState("All Networks");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [icons, setIcons] = useState<{ [key: string]: string | null }>({});
 
@@ -92,7 +93,9 @@ function List() {
   };
 
   // Handle search input change
-  const handleSearch = (e: { target: { value: React.SetStateAction<string>; }; }) => {
+  const handleSearch = (e: {
+    target: { value: React.SetStateAction<string> };
+  }) => {
     setSearchQuery(e.target.value);
   };
 
@@ -110,9 +113,11 @@ function List() {
   return (
     <div className="max-w-7xl mx-auto px-3 sm:px-8 py-12 bg-black">
       {/* Header Section */}
-      <div className="text-center mb-12">
-        <h1 className="text-5xl font-bold text-white mb-4">Explore Networks</h1>
-        <p className="text-lg text-gray-400">
+      <div className="text-center mb-12 px-4 md:px-8 lg:px-16">
+        <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
+          Explore Networks
+        </h1>
+        <p className="text-base md:text-lg text-gray-400">
           Discover and find faucets for various blockchain networks.
         </p>
       </div>
@@ -181,7 +186,7 @@ function List() {
                 <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center mr-4 shadow-md">
                   {network.icon && icons[network.icon] ? (
                     <Image
-                      src={icons[network.icon] || '../app/favicon.ico'}
+                      src={icons[network.icon] || "../app/favicon.ico"}
                       alt={`${network.name} Icon`}
                       width={32}
                       height={32}
@@ -190,7 +195,9 @@ function List() {
                     <span className="text-gray-500">No Icon</span>
                   )}
                 </div>
-                <h2 className="text-2xl font-semibold text-white">{network.name}</h2>
+                <h2 className="text-2xl font-semibold text-white">
+                  {network.name}
+                </h2>
               </div>
             </div>
             <div className="flex items-end justify-between">
@@ -231,4 +238,3 @@ function List() {
 }
 
 export default List;
-
