@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /admin/
+
+Allow: /
+
+Sitemap: https://www.faucethub.org/sitemap.xml
