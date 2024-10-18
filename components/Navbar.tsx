@@ -111,12 +111,14 @@ function Navbar() {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden bg-black/80 px-6 py-4 rounded-b-3xl ">
-          <button
+          <Link
+            href="https://github.com/AliErcanOzgokce/FaucetHub/discussions/new?category=give-feedbacks"
+            target="_blank"
             data-theme="myTheme"
             className="w-full px-6 py-2 bg-gray-700 text-white font-semibold rounded-full hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-opacity-50 transition duration-300 mt-4"
           >
-            Support Us!
-          </button>
+            Share Feedback
+          </Link>
         </div>
       )}
     </header>
