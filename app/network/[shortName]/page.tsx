@@ -3,6 +3,7 @@ import { useParams } from "next/navigation";
 import networks from "@/data/networks"; // Adjust the path as necessary
 import Image from "next/image";
 import arrow from "@/assets/arrow-up-right.svg"; // Ensure the correct path
+import { rankFaucets } from "@/helpers/rankFaucets";
 
 type Props = {
   params: { shortName: string };
@@ -69,6 +70,8 @@ export default function NetworkDetail({ params }: Props) {
       </div>
     );
   }
+  // Sort faucets based on user-friendly ranking
+  const sortedFaucets = rankFaucets(network.faucets);
 
   // Helper function to format URLs
   const formatUrl = (url: string | URL): string => {
@@ -93,7 +96,7 @@ export default function NetworkDetail({ params }: Props) {
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {network.faucets.map((faucet, index) => (
+        {sortedFaucets.map((faucet, index) => (
           <a
             key={index}
             href={faucet.url}
