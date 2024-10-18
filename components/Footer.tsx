@@ -3,7 +3,6 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "@/assets/white_logo (1).png";
-import linkedin from "@/assets/linkedin.png";
 import x from "@/assets/x.png";
 import github from "@/assets/github.png"
 
