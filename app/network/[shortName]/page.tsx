@@ -4,6 +4,7 @@ import networks from "@/data/networks"; // Adjust the path as necessary
 import Image from "next/image";
 import arrow from "@/assets/arrow-up-right.svg"; // Ensure the correct path
 import { rankFaucets } from "@/helpers/rankFaucets";
+import Link from "next/link";
 
 type Props = {
   params: { shortName: string };
@@ -70,6 +71,7 @@ export default function NetworkDetail({ params }: Props) {
       </div>
     );
   }
+
   // Sort faucets based on user-friendly ranking
   const sortedFaucets = rankFaucets(network.faucets);
 
@@ -155,6 +157,7 @@ export default function NetworkDetail({ params }: Props) {
             </div>
           </a>
         ))}
+
       </div>
     </div>
   );
