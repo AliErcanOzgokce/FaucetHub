@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import logo from "@/assets/white_logo (1).png";
 import x from "@/assets/x.png";
-import github from "@/assets/github.png"
+import github from "@/assets/github.png";
 
 function Footer() {
   return (
@@ -32,7 +32,11 @@ function Footer() {
               <Link href="https://x.com/aeoWeb3" target="_blank" passHref>
                 <Image src={x} width={30} height={30} alt="X" />
               </Link>
-              <Link href="https://github.com/aliercanozgokce" target="_blank" passHref>
+              <Link
+                href="https://github.com/aliercanozgokce"
+                target="_blank"
+                passHref
+              >
                 <Image src={github} width={30} height={30} alt="Website" />
               </Link>
             </div>
@@ -40,7 +44,9 @@ function Footer() {
             {/* Made By */}
             <p className="text-gray-500">
               Made by{" "}
-              <span className="font-semibold text-white">Ali Ercan Özgökçe</span>
+              <span className="font-semibold text-white">
+                Ali Ercan Özgökçe
+              </span>
             </p>
           </div>
         </div>
@@ -50,5 +56,3 @@ function Footer() {
 }
 
 export default Footer;
-
-

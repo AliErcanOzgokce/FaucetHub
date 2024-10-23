@@ -157,7 +157,6 @@ export default function NetworkDetail({ params }: Props) {
             </div>
           </a>
         ))}
-
       </div>
     </div>
   );

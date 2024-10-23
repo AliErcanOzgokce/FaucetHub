@@ -17,7 +17,8 @@ function List() {
   const router = useRouter();
   const [filteredNetworks, setFilteredNetworks] = useState<Network[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedNetworkType, setSelectedNetworkType] = useState("All Networks");
+  const [selectedNetworkType, setSelectedNetworkType] =
+    useState("All Networks");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [icons, setIcons] = useState<{ [key: string]: string | null }>({});
 
@@ -93,7 +94,9 @@ function List() {
   };
 
   // Handle search input change
-  const handleSearch = (e: { target: { value: React.SetStateAction<string> }; }) => {
+  const handleSearch = (e: {
+    target: { value: React.SetStateAction<string> };
+  }) => {
     setSearchQuery(e.target.value);
   };
 
@@ -108,13 +111,16 @@ function List() {
     setIsDropdownOpen(false);
   };
 
-
   return (
     <div className="max-w-7xl mx-auto px-3 sm:px-8 py-12 bg-black">
       {/* Header Section */}
       <div className="text-center mb-12 px-4 md:px-8 lg:px-16">
-        <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">Explore Networks</h1>
-        <p className="text-base md:text-lg text-gray-400">Discover and find faucets for various blockchain networks.</p>
+        <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
+          Explore Networks
+        </h1>
+        <p className="text-base md:text-lg text-gray-400">
+          Discover and find faucets for various blockchain networks.
+        </p>
       </div>
 
       {/* Search and Network Selection */}
@@ -144,7 +150,12 @@ function List() {
               stroke="currentColor"
               viewBox="0 0 24 24"
             >
-              <path d="M19 9l-7 7-7-7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+              <path
+                d="M19 9l-7 7-7-7"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+              />
             </svg>
           </button>
           {isDropdownOpen && (
@@ -175,25 +186,44 @@ function List() {
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center mr-4 shadow-md">
                   {network.icon && icons[network.icon] ? (
-                    <Image src={icons[network.icon] || "../app/favicon.ico"} alt={`${network.name} Icon`} width={32} height={32} />
+                    <Image
+                      src={icons[network.icon] || "../app/favicon.ico"}
+                      alt={`${network.name} Icon`}
+                      width={32}
+                      height={32}
+                    />
                   ) : (
                     <span className="text-gray-500">No Icon</span>
                   )}
                 </div>
-                <h2 className="text-2xl font-semibold text-white">{network.name}</h2>
+                <h2 className="text-2xl font-semibold text-white">
+                  {network.name}
+                </h2>
               </div>
             </div>
             <div className="flex items-end justify-between">
               <button className="text-blue-500 hover:text-blue-400 flex items-center font-medium">
                 View Details
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+                <svg
+                  className="w-4 h-4 ml-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M9 5l7 7-7 7"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                  />
                 </svg>
               </button>
               {/* Amount Section */}
               <div className="flex flex-col items-end">
                 <p className="text-gray-400 text-xs">Faucets available:</p>
-                <div className="text-2xl font-bold text-yellow-500">{network.faucets.length}</div>
+                <div className="text-2xl font-bold text-yellow-500">
+                  {network.faucets.length}
+                </div>
               </div>
             </div>
           </div>
@@ -206,14 +236,25 @@ function List() {
           className="cursor-pointer bg-black-800/45 border border-gray-700 rounded-xl p-5 flex flex-col justify-center items-center text-center transition-transform transform hover:-translate-y-1 hover:shadow-xl"
         >
           {/* Plus icon */}
-          <svg xmlns="http://www.w3.org/2000/svg" className="w-16 h-16 mb-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-16 h-16 mb-4 text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M12 4v16m8-8H4"
+            />
           </svg>
-          <h2 className="text-xl font-semibold text-white">Request a Network</h2>
+          <h2 className="text-xl font-semibold text-white">
+            Request a Network
+          </h2>
         </Link>
       </div>
-
-      
     </div>
   );
 }
