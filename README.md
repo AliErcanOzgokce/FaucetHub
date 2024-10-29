@@ -22,6 +22,7 @@ FaucetHub.org provides an extensive collection of crypto faucets for all chains.
 - **Polygon (MATIC)** 🛡️
 - **Arbitrum** 🔷
 - **Avalanche (AVAX)** ❄️
+- **Bitlayer**
 - and many more...
 
 ## How to Use 📝
