@@ -2,7 +2,7 @@
   "name": "Polygon zkEVM Cardona",
   "title": "Polygon zkEVM Cardona Testnet",
   "chain": "Polygon",
-  "rpc": ["https://rpc.cardona.zkevm-rpc.com"],
+  "rpc": ["https://rpc.cardona.zkevm-rpc.com", ""],
   "faucets": [
     {
       "name": "Polygon Faucet",
@@ -24,7 +24,7 @@
       "captcha": true,
       "mainnetTokenBalanceRequired": false,
       "isOfficial": false,
-      "isPOW":false
+      "isPOW": false
     }
   ],
   "nativeCurrency": {
