@@ -2,7 +2,10 @@
   "name": "Polygon zkEVM Cardona",
   "title": "Polygon zkEVM Cardona Testnet",
   "chain": "Polygon",
-  "rpc": ["https://rpc.cardona.zkevm-rpc.com", ""],
+  "rpc": [
+    "https://rpc.cardona.zkevm-rpc.com",
+    "https://polygon-zkevm-cardona.blockpi.network/v1/rpc/public"
+  ],
   "faucets": [
     {
       "name": "Polygon Faucet",
