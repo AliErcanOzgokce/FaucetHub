@@ -2,7 +2,7 @@
     "name": "Ton Square Testnet",
     "title": "Ton Testnet",
     "chain": "Ton",
-    "rpc": [],
+    "rpc": ["https://rpc-testnet.tonsquare.io"],
     "faucets": [
      {
         "name": "TON Square Faucet",
