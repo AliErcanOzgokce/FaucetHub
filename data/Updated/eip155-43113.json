@@ -5,7 +5,15 @@
   "rpc": [
     "https://api.avax-test.network/ext/bc/C/rpc",
     "https://avalanche-fuji-c-chain-rpc.publicnode.com",
-    "wss://avalanche-fuji-c-chain-rpc.publicnode.com"
+    "wss://avalanche-fuji-c-chain-rpc.publicnode.com",
+    "https://endpoints.omniatech.io/v1/avax/fuji/public",
+    "https://rpc.ankr.com/avalanche_fuji",
+    "https://rpc.ankr.com/avalanche_fuji-c",
+    "https://ava-testnet.public.blastapi.io/ext/bc/C/rpc",
+    "https://avalanche-fuji.blockpi.network/v1/rpc/public",
+    "https://api.zan.top/avax-fuji/ext/bc/C/rpc",
+    "https://public.stackup.sh/api/v1/node/avalanche-fuji",
+    "https://avalanchetestapi.terminet.io/ext/bc/C/rpc"
   ],
   "faucets": [
     {
