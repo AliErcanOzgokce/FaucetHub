@@ -6,7 +6,13 @@
   "rpc": [
     "https://rpc-amoy.polygon.technology",
     "https://polygon-amoy-bor-rpc.publicnode.com",
-    "wss://polygon-amoy-bor-rpc.publicnode.com"
+    "wss://polygon-amoy-bor-rpc.publicnode.com",
+    "https://polygon-amoy.blockpi.network/v1/rpc/public",
+    "https://rpc.ankr.com/polygon_amoy",
+    "https://polygon-amoy.drpc.org",
+    "https://polygon-amoy.gateway.tatum.io",
+    "https://polygon-amoy.gateway.tenderly.co",
+    "https://api.zan.top/polygon-amoy"
   ],
   "faucets": [
     {
