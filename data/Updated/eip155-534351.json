@@ -6,7 +6,15 @@
     "https://sepolia-rpc.scroll.io",
     "https://rpc.ankr.com/scroll_sepolia_testnet",
     "https://scroll-sepolia.chainstacklabs.com",
-    "https://scroll-testnet-public.unifra.io"
+    "https://scroll-testnet-public.unifra.io",
+    "https://scroll-sepolia.blockpi.network/v1/rpc/public",
+    "https://scroll-public.scroll-testnet.quiknode.pro",
+    "https://scroll-sepolia.drpc.org",
+    "https://scroll-testnet.rpc.grove.city/v1/a7a7c8e2",
+    "http://scroll-sepolia-rpc.01no.de:8545",
+    "https://endpoints.omniatech.io/v1/scroll/sepolia/public",
+    "https://scroll-sepolia-rpc.publicnode.com",
+    "wss://scroll-sepolia-rpc.publicnode.com"
   ],
   "faucets": [
     {
