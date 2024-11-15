@@ -4,7 +4,12 @@
   "rpc": [
     "https://sepolia.optimism.io",
     "https://optimism-sepolia.drpc.org",
-    "wss://optimism-sepolia.drpc.org"
+    "wss://optimism-sepolia.drpc.org",
+    "https://optimism-sepolia.blockpi.network/v1/rpc/public",
+    "https://public.stackup.sh/api/v1/node/optimism-sepolia",
+    "https://endpoints.omniatech.io/v1/op/sepolia/public",
+    "https://optimism-sepolia.gateway.tenderly.co",
+    "https://api.zan.top/opt-sepolia"
   ],
   "faucets": [
     {
