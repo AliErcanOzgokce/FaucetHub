@@ -4,7 +4,9 @@
   "rpc": [
     "https://sepolia.blast.io",
     "https://blast-sepolia.drpc.org",
-    "wss://blast-sepolia.drpc.org"
+    "wss://blast-sepolia.drpc.org",
+    "https://blast-sepolia.blockpi.network/v1/rpc/public",
+    "https://endpoints.omniatech.io/v1/blast/sepolia/public"
   ],
   "faucets": [
     {
